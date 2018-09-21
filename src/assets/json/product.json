@@ -1,0 +1,292 @@
+{
+  "data": {
+    "title": "用户使用大数据周报",
+    "platform": "福田车联网平台",
+    "reportDate": {
+      "startDate": "2018/09/10",
+      "endDate": "2018/09/16"
+    },
+    "accountIfAddData": [
+      {
+        "name": "产品总数",
+        "number": [
+          32,
+          32
+        ]
+      },
+      {
+        "name": "企业总数",
+        "number": [
+          302,
+          302
+        ]
+      },
+      {
+        "name": "账号总数",
+        "number": [
+          302,
+          32
+        ]
+      }
+    ],
+    "sortList": [
+      {
+        "title": "经销商车联网平台1",
+        "progress": "110"
+      },
+      {
+        "title": "供应商车联网平台2",
+        "progress": "996"
+      },
+      {
+        "title": "时代车联网平台3",
+        "progress": "591"
+      },
+      {
+        "title": "欧曼车联网平台4",
+        "progress": "287"
+      },
+      {
+        "title": "欧马可车联网平台5",
+        "progress": "888"
+      }
+    ],
+    "visitList": [
+      {
+        "title": "欧马可车联网平台1",
+        "progress": "22",
+        "lift": "0"
+      },
+      {
+        "title": "欧马可车联网平台2",
+        "progress": "10",
+        "lift": "2"
+      },
+      {
+        "title": "欧马可车联网平台3",
+        "progress": "90",
+        "lift": "2"
+      },
+      {
+        "title": "欧马可车联网平台4",
+        "progress": "72",
+        "lift": "1"
+      },
+      {
+        "title": "欧马可车联网平台5",
+        "progress": "40",
+        "lift": "0"
+      },
+      {
+        "title": "欧马可车联网平台6",
+        "progress": "50",
+        "lift": "1"
+      },
+      {
+        "title": "欧马可车联网平台7",
+        "progress": "49",
+        "lift": "0"
+      },
+      {
+        "title": "欧马可车联网平台8",
+        "progress": "9",
+        "lift": "0"
+      },
+      {
+        "title": "欧马可车联网平台9",
+        "progress": "79",
+        "lift": "0"
+      },
+      {
+        "title": "欧马可车联网平台10",
+        "progress": "39.3",
+        "lift": "0"
+      }
+    ],
+    "sortTopList": [
+      {
+        "title": "欧马可车联网平台",
+        "progress": "1233",
+        "lift": "0"
+      },
+      {
+        "title": "欧马可车联网平台",
+        "progress": "1233",
+        "lift": "1"
+      },
+      {
+        "title": "欧马可车联网平台",
+        "progress": "1233",
+        "lift": "2"
+      }
+    ],
+    "listSort": [
+      {
+        "title": "欧马可车联网平台1",
+        "progress": "133",
+        "lift": "1"
+      },
+      {
+        "title": "欧马可车联网平台2",
+        "progress": "123",
+        "lift": "2"
+      },
+      {
+        "title": "欧马可车联网平台3",
+        "progress": "1233",
+        "lift": "1"
+      },
+      {
+        "title": "欧马可车联网平台4",
+        "progress": "933",
+        "lift": "0"
+      },
+      {
+        "title": "欧马可车联网平台5",
+        "progress": "233",
+        "lift": "1"
+      }
+    ],
+    "parkList": [
+      {
+        "title": "欧马可车联网平台1",
+        "progress": "133",
+        "lift": "1"
+      },
+      {
+        "title": "欧马可车联网平台2",
+        "progress": "123",
+        "lift": "2"
+      },
+      {
+        "title": "欧马可车联网平台3",
+        "progress": "1233",
+        "lift": "1"
+      },
+      {
+        "title": "欧马可车联网平台4",
+        "progress": "933",
+        "lift": "0"
+      },
+      {
+        "title": "欧马可车联网平台5",
+        "progress": "233",
+        "lift": "1"
+      }
+    ],
+    "dealerList": [
+      {
+        "title": "欧马可车联网平台1",
+        "progress": "133",
+        "lift": "1"
+      },
+      {
+        "title": "欧马可车联网平台2",
+        "progress": "123",
+        "lift": "2"
+      },
+      {
+        "title": "欧马可车联网平台3",
+        "progress": "1233",
+        "lift": "1"
+      },
+      {
+        "title": "欧马可车联网平台4",
+        "progress": "933",
+        "lift": "0"
+      },
+      {
+        "title": "欧马可车联网平台5",
+        "progress": "233",
+        "lift": "1"
+      }
+    ],
+    "dealerScale": [
+      {
+        "value": 35,
+        "name": "实时数据"
+      },
+      {
+        "value": 15,
+        "name": "驾驶行为1"
+      },
+      {
+        "value": 10,
+        "name": "轨迹回放"
+      },
+      {
+        "value": 10,
+        "name": "驾驶行为2"
+      },
+      {
+        "value": 10,
+        "name": "驾驶行为3"
+      },
+      {
+        "value": 20,
+        "name": "其他"
+      }
+    ],
+    "parkScale": [
+      {
+        "value": 35,
+        "name": "实时数据"
+      },
+      {
+        "value": 15,
+        "name": "驾驶行为1"
+      },
+      {
+        "value": 10,
+        "name": "轨迹回放"
+      },
+      {
+        "value": 10,
+        "name": "驾驶行为2"
+      },
+      {
+        "value": 10,
+        "name": "驾驶行为3"
+      },
+      {
+        "value": 20,
+        "name": "其他"
+      }
+    ],
+    "comPieData": [
+      {
+        "title": "车厂端使用率",
+        "value": 88,
+        "name": "使用企业数量",
+        "num": 3333
+      },
+      {
+        "title": "车厂端使用率1",
+        "value": 12,
+        "name": "使用企业数量1",
+        "num": 3333
+      }
+    ],
+    "dealerPieData": [
+      {
+        "title": "经销商端使用率",
+        "value": 88,
+        "name": "使用企业数量",
+        "num": 3333
+      },
+      {
+        "title": "车厂端使用率1",
+        "value": 12,
+        "name": "使用企业数量1",
+        "num": 3333
+      }
+    ],
+    "visitChartData": [
+      {
+        "name": "本周",
+        "percents": [200, 300, 100, 50, 800, 405, 100]
+      },
+      { "name": "上周", "percents": [100, 350, 300, 400, 703, 20, 40]}
+    ]
+  }
+}

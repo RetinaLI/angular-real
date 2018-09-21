@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="5px" height="10px" viewBox="0 0 5 10" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.2 (57519) - http://www.bohemiancoding.com/sketch -->
+    <title>icon-down@2x</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="9.17修改版" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="用户使用大数据周报" transform="translate(-25.000000, -1294.000000)" fill="#3DE3A3" fill-rule="nonzero">
+            <g id="2.2" transform="translate(15.000000, 1138.000000)">
+                <path d="M11.6666667,161 L10,161 L12.5,156 L15,161 L13.3333333,161 L13.3333333,166 L11.6666667,166 L11.6666667,161 Z" id="icon-down" transform="translate(12.500000, 161.000000) scale(1, -1) translate(-12.500000, -161.000000) "></path>
+            </g>
+        </g>
+    </g>
+</svg>

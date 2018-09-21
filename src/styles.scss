@@ -1,0 +1,192 @@
+/* You can add global styles to this file, and also import other style files */
+@charset "UTF-8";
+%base-font-falmily {
+  font-family: PingFangSC-Regular, "Microsoft Yahei", 宋体, Tahoma, Verdana, sans-serif, simsun, Arial;
+}
+
+@mixin clearfix {
+  &:before, &:after {
+    content: " ";
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+.clearfix {
+  @include clearfix();
+}
+.fl {
+  float: left;
+}
+.fr {
+  float: right;
+}
+
+.flex {
+  display: flex;
+  flex-direction: row;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: none;
+  font-size: .16rem;
+  font-weight: normal;
+  @extend %base-font-falmily;
+}
+
+html {
+  background-color: transparent;
+}
+
+html,
+body {
+  height: 100%;
+  -webkit-font-smoothing: subpixel-antialiased;
+  -webkit-text-size-adjust: 100% !important;
+  text-size-adjust: 100% !important;
+}
+
+
+ul{
+  -webkit-padding-start: 0px;
+  margin: 0;
+  li{
+    list-style: none;
+  }
+}
+i {
+  font-style: normal;
+}
+
+/*屏蔽safari默认样式*/
+button{
+  background-color:transparent;
+  border:0;
+}
+
+
+// 垂直居中
+.vc {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.font12 {
+  font-size: .12rem;
+}
+
+.page-body {
+  max-width: 750px;
+  min-height: 100vh;
+  margin: 0 auto;
+  background: #EEF2FD;
+}
+
+// item 圆角白底盒子
+.part {
+  margin: 0 .15rem .15rem;
+  padding: .15rem;
+  position: relative;
+  border-radius: 8px;
+  background-color: #fff;
+  box-shadow:0px 2px 8px 0px rgba(73,95,155,0.1);
+  // 个别part的标题为蓝字和灰线
+  .title-blue {
+    padding: .13rem 0 .15rem;
+    text-align: center;
+    h3 {
+      font-size: .14rem;
+      color: #4475FD;
+    }
+    p.line {
+      margin: .17rem auto 0;
+      width: .32rem;
+      height: .02rem;
+      background-color: #DAE3FF;
+    }
+  }
+}
+
+// 每块底部的文字描述，span为蓝字
+.detail {
+  padding: .15rem .1rem;
+  border-radius: 8px;
+  background-color: #ECF1FE;
+  font-size: .14rem;
+  color: #333;
+  line-height: 20px;
+  span {
+    font-size: .14rem;
+    color: #4475FD;
+  }
+}
+
+//带下划线的蓝色字体标题
+.title-blue {
+  padding: .25rem 0;
+  text-align: center;
+  h3 {
+    font-size: .14rem;
+    color: #4475FD;
+  }
+  p.line {
+    margin: .17rem auto 0;
+    width: .32rem;
+    height: .02rem;
+    background-color: #DAE3FF;
+    opacity: 0.8;
+  }
+}
+
+//table
+.table {
+  margin: 0 auto;
+  width: 100%;
+  border-collapse:collapse;
+  outline: 1px solid #eee;
+  tr:nth-child(odd) {
+    background-color: #F7F7F8;
+  }
+  td {
+    // padding-left: .15rem;
+    // width: .79rem;
+    height: .4rem;
+    font-size: .12rem;
+    color: #666;
+    text-align: center;
+    &:first-child {
+      text-indent: .15rem;
+      color: #333;
+      text-align: left;
+    }
+  }
+}
+
+app-section:first-of-type {
+  margin-top: -.25rem;
+  display: block;
+  position: relative;
+  z-index: 2;
+}
+
+.theme-h2 {
+  text-align: center;
+  flex-direction: column;
+  h3 {
+    font-size: .14rem;
+    color: #4475FD;
+  }
+  p.line {
+    margin: .17rem auto 0;
+    width: .32rem;
+    height: .02rem;
+    background-color: #DAE3FF;
+  }
+}

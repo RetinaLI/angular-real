@@ -1,0 +1,27 @@
+.img-text-sheets ul {
+  padding: 0 .09rem .15rem;
+  li {
+    float: left;
+    width: 50%;
+    &.mt {
+      margin-top: .4rem;
+    }
+    img {
+      margin-right: .16rem;
+      width: .32rem;
+      height: .32rem;
+    }
+    .sheet-right {
+      display: inline-block;
+      .title {
+        color: #666;
+        font-size: .12rem;
+        opacity: 0.5;
+      }
+      span {
+        color: #4475FD;
+        font-size: .16rem;
+      }
+    }
+  }
+}

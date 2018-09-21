@@ -1,0 +1,17 @@
+<div class="total-info">
+  <div *ngFor="let item of data" class="{{className}}">
+    <p class="title">{{item.name}}</p>
+    <span *ngIf="onlyOne"> {{item.number}} </span>
+    <span *ngIf="!onlyOne">{{ item.number[0] }}</span>
+
+    <div *ngIf="showNum">
+      <p *ngIf="item.number[1] > item.number[0]" class="marker">
+        <img src="assets/images/logistic/icon-up.svg" alt="">
+        <span class="add">{{item.addValue}} </span>
+      </p>
+      <p *ngIf="item.number[1] == item.number[0] || item.number[0] > item.number[1] " class="noadd">
+        <span></span>
+      </p>
+    </div>
+  </div>
+</div>

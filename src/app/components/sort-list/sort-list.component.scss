@@ -1,0 +1,105 @@
+@import "variable";
+
+.sort-content {
+  &:nth-last-child(1) {
+    .list-line.line {
+      border: none;
+    }
+  }
+  & > .title {
+    line-height: .3rem;
+  }
+  .text {
+    display: inline-block;
+    vertical-align: middle;
+    width: .61rem;
+    padding-right: .07rem;
+    color: $black333;
+  }
+  .lift {
+    display: inline-block;
+    vertical-align: middle;
+    width: .05rem;
+    height: .1rem;
+    margin-right: .04rem;
+    &.up {
+      background: url("../../../assets/images/product/icon-up@2x.png") no-repeat;
+      background-size: 100% 100%;
+    }
+    &.no {
+      background: linear-gradient(#fff 0.04rem, #eee 0.04em, #eee 0.07rem, #fff 0.07rem);
+      background: -ms-linear-gradient(#fff 0.04rem, #eee 0.04em, #eee 0.07rem, #fff 0.07rem);
+    }
+    &.down {
+      background: url("../../../assets/images/product/icon-down@2x.png") no-repeat;
+      background-size: 100% 100%;
+    }
+  }
+  .sort {
+    display: inline-block;
+    vertical-align: middle;
+    width: .22rem;
+    height: .22rem;
+    margin-right: .1rem;
+    text-align: center;
+    line-height: .22rem;
+    font-weight: 800;
+    color: $yellow;
+    &.sort-01 {
+      background: url("../../../assets/images/product/icon-top1@2x.png") no-repeat;
+      background-size: 100% 100%;
+    }
+    &.sort-02 {
+      background: url("../../../assets/images/product/icon-top2@2x.png") no-repeat;
+      background-size: 100% 100%;
+    }
+    &.sort-03 {
+      background: url("../../../assets/images/product/icon-top3@2x.png") no-repeat;
+      background-size: 100% 100%;
+    }
+  }
+  .list {
+    flex: 1;
+  }
+  .list-line {
+    justify-content: space-between;
+    align-items: center;
+    height: .35rem;
+    line-height: .35rem;
+    &.line {
+      border-bottom: 1px solid #eee;
+    }
+    .title {
+      color: $black333;
+    }
+  }
+  .bgPro {
+    border-radius: 11px 0 0 11px;
+    text-align: center;
+    color: #fff !important;
+    width: .56rem;
+    padding-left: .05rem;
+    height: .22rem;
+    line-height: .22rem;
+    background: $yellow;
+    margin-right: -.15rem;
+  }
+  .note {
+    .note-l {
+      margin-left: .09rem;
+    }
+    .note-count {
+      margin-right: .31rem;
+      color: #aaa;
+    }
+  }
+  .blue {
+    color: $blue;
+  }
+  .yellow {
+    color: $yellow;
+  }
+  .red {
+    color: $red;
+  }
+}

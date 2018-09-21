@@ -1,0 +1,101 @@
+{
+  "data": {
+    "title": "物流大数据周报",
+    "platform": "福田车联网平台",
+    "reportDate": {
+      "startDate": "2017.08.01",
+      "endDate": "2017/08/31"
+    },
+    "accountIfAddData": [
+      {"name":"分公司", "number":[32,32]},
+      {"name":"物流部", "number":[352,3660]},
+      {"name":"承运商", "number":[322,3222]},
+      {"name":"司机", "number":[372,392]},
+      {"name":"运输路线", "number":[302,302]},
+      {"name":"位置标点", "number":[302,32]}
+    ],
+    "transportCondition": [
+      {
+        "name": "待调度",
+        "value": 321
+      },
+      {
+        "name": "已发车",
+        "value": 200
+      },
+      {
+        "name": "已到达",
+        "value": 122
+      },
+      {
+        "name": "异常运单",
+        "value": 142
+      }
+    ],
+    "startShip": [
+      {"date": "Mon", "number":[100, 20]},
+      {"date": "Tue", "number":[60, 20]},
+      {"date": "Wed", "number":[100, 20]},
+      {"date": "Thur", "number":[120, 30]},
+      {"date": "Fri", "number":[70, 20]},
+      {"date": "Sat", "number":[80, 20]},
+      {"date": "Sun", "number":[100, 40]}
+    ],
+    "noStartShip3":[
+      {"title":"北京金福润田物流有限公司","progress":"20%", "note": 5898, "errNote":322},
+      {"title":"吉林华航实业集团有限公司","progress":"20%","note": 5898, "errNote":322},
+      {"title":"环球众鑫（北京）供应链管理有限公司","progress":"23.44%","note": 5898, "errNote":322}
+    ],
+    "progressData": [
+      {"title": "欧曼", "progress": "90"},
+      {"title": "欧马可", "progress": "70"},
+      {"title": "欧曼", "progress": "67"}
+    ],
+    "brandPoor": [
+      "伽途",
+      "雷萨",
+      "欧码"
+    ],
+    "brandGood3": [
+      {"title": "欧曼", "progress": "90"},
+      {"title": "欧马可", "progress": "70"},
+      {"title": "欧曼", "progress": "67"}
+    ],
+    "brandPoor3": [
+      "伽途",
+      "雷萨",
+      "欧码"
+    ],
+    "departmentGood3": [
+      {"title": "南海多功能物流部", "progress": "90"},
+      {"title": "欧马可整车部", "progress": "70"},
+      {"title": "诸城工程销售物流部", "progress": "67"}
+    ],
+    "departmentPoor3": [
+      "南海多功能物流部",
+      "时代南海",
+      "欧马可整车部"
+    ],
+    "carrierGood3": [
+      {"title": "南海多功能承运商", "progress": "90"},
+      {"title": "欧马可整车承运商", "progress": "70"},
+      {"title": "诸城工程销售承运商", "progress": "67"}
+    ],
+    "carrierPoor3": [
+      "1承运商",
+      "2承运商",
+      "3承运商"
+    ],
+    "driverGood3": [
+      {"title": "司机1", "progress": "90"},
+      {"title": "司机2", "progress": "70"},
+      {"title": "司机3", "progress": "67"}
+    ],
+    "driverPoor3": [
+      "1司机",
+      "2司机",
+      "3司机"
+    ]
+
+  }
+}

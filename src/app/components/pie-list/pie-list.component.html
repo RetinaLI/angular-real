@@ -1,0 +1,27 @@
+<div class="pie-list clearfix">
+  <div class="chart fl" [attr.id]="name" (window:resize)="onWindowResize()"></div>
+  <div class="list fl">
+    <table>
+      <tr *ngFor="let v of data; let i = index;">
+        <td>
+          <i class="icon" [style.backgroundColor]="colors[i]"></i>
+          {{v.name}}
+        </td>
+        <td>
+          {{v.value}}
+        </td>
+        <td>
+          {{(v.value/sum * 100).toFixed(2) + '%'}}
+        </td>
+      </tr>
+    </table>
+    <!-- <p *ngFor="let v of data; let i = index;">
+      <span>
+          <i class="icon" [style.backgroundColor]="colors[i]"></i>
+          {{v.name}}
+      </span>
+      <span>{{v.value}}</span>
+      <span class="raty">{{(v.value/sum * 100).toFixed(2) + '%'}}</span>
+    </p> -->
+  </div>
+</div>

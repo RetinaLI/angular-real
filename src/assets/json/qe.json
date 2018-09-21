@@ -1,0 +1,55 @@
+{
+  "data": {
+    "title": "质量大数据周报",
+    "reportDate": {
+      "startDate": "2017.08.01",
+      "endDate": "2017/08/31"
+    },
+    "summary": {
+      "total": 12312,
+      "car": 12312,
+      "perByCar": 12312,
+      "sumMileage": 12312,
+      "perBy1000": 12312
+    },
+    "orderByFaultTypeData": [
+      { "name": "ECM1", "value": 20 },
+      { "name": "ECM2", "value": 20 },
+      { "name": "ECM3", "value": 20 },
+      { "name": "ECM4", "value": 20 },
+      { "name": "ECM5", "value": 20 }
+    ],
+    "faultByBrandList": [
+      { "name": "欧曼", "percents": [33, 33, 34] },
+      { "name": "欧曼1", "percents": [33, 33, 34] },
+      { "name": "欧曼2", "percents": [33, 33, 34] },
+      { "name": "欧曼3", "percents": [33, 33, 34] },
+      { "name": "欧曼4", "percents": [33, 33, 34] }
+    ],
+    "faultPercentByTypeList": [
+      { "name": "欧曼", "percents": [10,20,30,40,50,60,70,10,20,30,40,50,60,70,10,20,30,40,50,60,70,10,20,30,40,50,60,70,1,1,1] }
+    ],
+    "faultCountList": [
+      { "name": "eqweqweqwe", "count": 123123 },
+      { "name": "eqweqweqwe1", "count": 123123 },
+      { "name": "eqweqweqwe2", "count": 123123 },
+      { "name": "eqweqweqwe3", "count": 123123 },
+      { "name": "eqweqweqwe4", "count": 123123 }
+    ],
+    "faultTopOneByTypeList": [
+      { "name": "全部", "faultName": "asdasd", "percent": 12 },
+      { "name": "全部1", "faultName": "asdasd", "percent": 12 },
+      { "name": "全部2", "faultName": "asdasd", "percent": 12 },
+      { "name": "全部3", "faultName": "asdasd", "percent": 12 },
+      { "name": "全部4", "faultName": "asdasd", "percent": 12 },
+      { "name": "全部5", "faultName": "asdasd", "percent": 12 }
+    ],
+    "faultFixSummary": {
+      "fix": 123,
+      "total": 123213,
+      "open": 213213,
+      "hasOwner": 123213,
+      "toSIBEL": 213123
+    }
+  }
+}

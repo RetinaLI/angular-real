@@ -1,0 +1,114 @@
+@import "variable";
+.progress-content {
+  align-items: center;
+  line-height: .18rem;
+  padding: .1rem 0 0;
+  margin-bottom: .1rem;
+  .title {
+    .text {
+      display: inline-block;
+      vertical-align: middle;
+      width: .61rem;
+      padding-right: .07rem;
+      color: $black333;
+    }
+    .lift {
+      display: inline-block;
+      vertical-align: middle;
+      width: .05rem;
+      height: .1rem;
+      margin-right: .04rem;
+      &.up {
+        background: url("../../../assets/images/product/icon-up@2x.png") no-repeat;
+        background-size: 100% 100%;
+      }
+      &.no {
+        background: linear-gradient(#fff 0.04rem, #eee 0.04em, #eee 0.07rem, #fff 0.07rem);
+        background: -ms-linear-gradient(#fff 0.04rem, #eee 0.04em, #eee 0.07rem, #fff 0.07rem);
+      }
+      &.down {
+        background: url("../../../assets/images/product/icon-down@2x.png") no-repeat;
+        background-size: 100% 100%;
+      }
+    }
+  }
+  .sort {
+    display: inline-block;
+    vertical-align: middle;
+    width: .22rem;
+    height: .22rem;
+    margin-right: .1rem;
+    text-align: center;
+    line-height: .22rem;
+    font-weight: 800;
+    color: $yellow;
+    &.sort-01 {
+      background: url("../../../assets/images/product/icon-top1@2x.png") no-repeat;
+      background-size: 100% 100%;
+    }
+    &.sort-02 {
+      background: url("../../../assets/images/product/icon-top2@2x.png") no-repeat;
+      background-size: 100% 100%;
+    }
+    &.sort-03 {
+      background: url("../../../assets/images/product/icon-top3@2x.png") no-repeat;
+      background-size: 100% 100%;
+    }
+  }
+  .progress {
+    flex: 1;
+    margin-right: .5rem;
+    .progress-all {
+      position: relative;
+      width: 100%;
+      background: #eee;
+      height: .06rem;
+      border-radius: .03rem;
+      .progress-line {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        background: $blue;
+        border-radius: .03rem;
+        height: 100%;
+        &.blue {
+          background: $blue;
+        }
+        &.yellow {
+          background: $yellow;
+        }
+        &.red {
+          background: $red;
+        }
+      }
+    }
+    .progress-sec-all {
+      margin-top: .07rem;
+    }
+    .num {
+      position: absolute;
+      transform: translateY(-50%);
+      top: 50%;
+      width: .5rem;
+      text-align: left;
+      right: -.45rem;
+      padding-left: .08rem;
+    }
+    .problem {
+      position: absolute;
+      left: 0;
+      top: -.2rem;
+      min-width: 120px;
+    }
+    .blue {
+      color: $blue;
+    }
+    .yellow {
+      color: $yellow;
+    }
+    .red {
+      color: $red;
+    }
+  }
+}

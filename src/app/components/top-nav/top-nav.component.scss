@@ -1,0 +1,44 @@
+.top-nav {
+  position: relative;
+  width: 100%;
+  background-color: #eee;
+  background-size: cover;
+  img.bg {
+    display: block;
+    max-width: 100%;
+  }
+
+  .logo {
+    position: absolute;
+    top: .15rem;
+    left: .15rem;
+    width: .6rem;
+    img {
+      display: block;
+      max-width: 100%;
+    }
+  }
+  .txt {
+    left: 10%;
+    text-align: left;
+    color: #Fff;
+    .platform {
+      font-size: .18rem;
+    }
+    .title {
+      margin-top: .07rem;
+      font-size: .24rem;
+      font-weight: bold;
+      line-height: .24rem;
+      &.service {
+        color: #272727;
+      }
+    }
+    .date {
+      margin-top: .09rem;
+      font-size: .12rem;
+      line-height: .14rem;
+      color: rgba(255, 255, 255, .8);
+    }
+  }
+}

@@ -1,0 +1,51 @@
+@import "variable";
+.product-section {
+  position: relative;
+  z-index: 1;
+  margin-top: -.4rem;
+}
+.chart-wrapper {
+  height: 3rem;
+  margin-bottom: .2rem;
+}
+.com-use {
+  padding: 0 10%;
+  &.com-use-yellow {
+    padding: .4rem 10%;
+  }
+  .com-chart {
+    flex: 1;
+  }
+  .com-use-title {
+    flex: 1;
+    padding-top: .22rem;
+    .com-use-title-t {
+      font-weight: 500;
+      font-size: .16rem;
+      color: #666;
+    }
+    .com-use-title-n {
+      position: relative;
+      color: $blue;
+      padding: .16rem 0 .08rem;
+      border-bottom: 1px solid #4475FD;
+      &.yellow {
+        color: $yellow;
+        border-bottom-color: $yellow;
+        &:before {
+          background: $yellow;
+        }
+      }
+      &:before {
+        content: '';
+        position: absolute;
+        left: -.18rem;
+        bottom: 2px;
+        transform: rotate(20deg);
+        width: .2rem;
+        height: 1px;
+        background: $blue;
+      }
+    }
+  }
+}

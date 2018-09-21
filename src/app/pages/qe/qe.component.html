@@ -1,0 +1,51 @@
+<div class="page-body clearfix">
+  <app-top-nav theme="quality" [bannerInfo]="bannerInfo"></app-top-nav>
+  <app-section theme="h1" title="质量概况" order-number="01">
+    <app-account-if-add [data]="summaryData" [showNum]="false"></app-account-if-add>
+  </app-section>
+  <app-section theme="h2" title="故障类型占比排名">
+    <app-pie chart-title="故障占比" [pieData]="orderByFaultTypeData" [chartColor]="orderByFaultTypeChartColors" [label]="false" [nameData]="false" height="1.2rem" [chart-radius]="['75%', '95%']"></app-pie>
+    <ul class="order-by-fault-type-list clearfix">
+      <li *ngFor="let item of orderByFaultTypeList; trackBy: trackByOrderByFaultTypeList;">
+        <i [style.background-color]="item.color"></i>
+        <label>{{ item.name }}</label>
+        <span>{{ item.value }}%</span>
+      </li>
+    </ul>
+  </app-section>
+  <app-section theme="h2" title="各品牌故障级别统计">
+    <ul class="fault-percent-by-type-color-list">
+      <li *ngFor="let item of faultByBrandColors; trackBy: trackByFaultByBrandColors">
+        <i [style.background-color]="item.color"></i>
+        <span>{{ item.label }}</span>
+      </li>
+    </ul>
+    <ul class="fault-percent-by-type-list">
+      <li *ngFor="let item of faultByBrandList; trackBy: trackByFaultByBrandList">
+        <label>{{ item.name }}</label>
+        <div>
+          <span [style.width]="item.highSize+'%'" [style.background-color]="item.highSizeColor"><i>{{item.highSize}}%</i></span>
+          <span [style.width]="item.middleSize+'%'" [style.background-color]="item.middleSizeColor"><i>{{item.middleSize}}%</i></span>
+          <span [style.width]="item.lowSize+'%'" [style.background-color]="item.lowSizeColor"><i>{{item.lowSize}}%</i></span>
+        </div>
+      </li>
+    </ul>
+  </app-section>
+  <app-section theme="h2" title="各品牌故障率趋势">
+    <div class="chart-wrapper">
+      <app-echart-base [option]="faultPercentByTypeOption"></app-echart-base>
+    </div>
+  </app-section>
+  <app-section class="fault-count-list" theme="h1" title="故障码" order-number="02">
+    <app-level2-title name="车联网平台故障码TOP5"></app-level2-title>
+    <app-sort-list [data]="faultCountList" [sort]="true" unit="c"></app-sort-list>
+  </app-section>
+  <app-section theme="h2" title="最长出现故障码在各品牌中的比率" order-number="02">
+    <app-progress [data]="faultTopOneByTypeList" [layout]="false" unit="%" [marginBottom]=".3"></app-progress>
+  </app-section>
+  <app-section theme="h1" title="故障处理情况" order-number="03">
+    <app-img-text-sheets [sheetsList]="faultFixList"></app-img-text-sheets>
+    <div class="detail">本{{reportData?.timeRangeType}}车联网总计收到发送故障码<span>{{reportData?.faultFixSummary.total}}个</span>，已经向SIBEL进行推送<span>{{reportData?.faultFixSummary.toSIBEL}}个</span>，其中已经处理完毕<span>{{reportData?.faultFixSummary.fix}}个</span>，占比<span>{{(reportData?.faultFixSummary.fix/reportData?.faultFixSummary.total) | number:'1.0-0'}}%</span>，已分发<span>{{reportData?.faultFixSummary.hasOwner}}个</span>，占比<span>{{(reportData?.faultFixSummary.hasOwner/reportData?.faultFixSummary.total) | number:'1.0-0'}}%</span>，待处理<span>{{reportData?.faultFixSummary.open}}个</span>，占比<span>{{(reportData?.faultFixSummary.open/reportData?.faultFixSummary.total) | number:'1.0-0'}}%</span>。</div>
+  </app-section>
+  <app-logo-bottom></app-logo-bottom>
+</div>

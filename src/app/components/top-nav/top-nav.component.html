@@ -1,0 +1,11 @@
+<div class="{{theme + ' top-nav'}}">
+  <img class="bg" [src]="themeMap[theme].imgUrl" alt="">
+  <div class="logo">
+    <img src="assets/images/logo.png" alt="">
+  </div>
+  <div class="txt vc">
+    <h4 class="platform">{{bannerInfo?.platform}}</h4>
+    <h3 class="title" [class.service]="theme === 'service'">{{bannerInfo?.title}}</h3>
+    <p class="date">{{bannerInfo?.startDate + '-' + bannerInfo?.endDate}}</p>
+  </div>
+</div>

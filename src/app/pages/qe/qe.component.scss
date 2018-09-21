@@ -1,0 +1,138 @@
+@import 'variable';
+
+.order-by-fault-type-list {
+  li {
+    float: left;
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 0 .3rem;
+    margin-top: .2rem;
+
+    i {
+      display: block;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      margin-right: 10px;
+    }
+
+    label {
+      font-weight: normal;
+      font-size: .14rem;
+      color: #666;
+      flex: 1;
+      text-align: left;
+    }
+    span {
+      color: $blue;
+      font-size: .14rem;
+      text-align: left;
+      width: .5rem;
+    }
+  }
+}
+
+/*各品牌故障级别统计*/
+.fault-percent-by-type-color-list {
+  margin: .15rem .15rem .32rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+
+  li {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left: .2rem;
+    i {
+      display: block;
+      border-radius: 50%;
+      height: 6px;
+      width: 6px;
+      margin-right: .06rem;
+    }
+    span {
+      font-size: .1rem;
+      color: #AAAAAA;
+    }
+  }
+}
+
+.fault-percent-by-type-list {
+  width: 100%;
+  padding: 0 .17rem;
+  li {
+    position: relative;
+    width: 100%;
+    margin-bottom: .32rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    label {
+      font-weight: normal;
+      font-size: .12rem;
+      color: #333;
+      text-align: left;
+      width: .6rem;
+    }
+
+    div{
+      flex: 1;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      span {
+        display: block;
+        height: 6px;
+        position: relative;
+
+        &:first-child {
+          border-top-left-radius: 3px;
+          border-bottom-left-radius: 3px;
+        }
+
+        &:last-child {
+          border-top-right-radius: 3px;
+          border-bottom-right-radius: 3px;
+        }
+
+        i {
+          color: #666;
+          font-size: .1rem;
+          position: absolute;
+          left: 50%;
+          transform: translateX(-50%) translateY(-102%);
+        }
+      }
+    }
+  }
+}
+
+/*故障码*/
+app-sort-list {
+  display: block;
+  margin: .23rem .09rem .08rem;
+}
+
+.chart-wrapper {
+  height: 3rem;
+}
+
+
+/*故障处理情况*/
+.detail {
+  margin: .15rem 0 0;
+}
+
+app-level2-title {
+  margin: .3rem 0 .2rem;
+}

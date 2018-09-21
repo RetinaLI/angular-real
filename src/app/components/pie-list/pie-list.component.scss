@@ -1,0 +1,40 @@
+@import 'variable';
+
+.pie-list {
+  height: 2.14rem;
+  .chart {
+    width: 40%;
+    height: 100%;
+  }
+  .list {
+    // padding-top: .3rem;
+    width: 60%;
+    table {
+      width: 100%;
+      tr {
+        height: .4rem;
+        td {
+          width: 33.33%;
+          color: #666;
+          font-size: .14rem;
+          text-align: center;
+          &:last-child {
+            color: $blue;
+          }
+          &:first-child {
+            min-width: .78rem;
+            text-align: left;
+          }
+          .icon {
+            margin-top: .04rem;
+            margin-right: .1rem;
+            display: inline-block;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+          }
+        }
+      }
+    }
+  }
+}

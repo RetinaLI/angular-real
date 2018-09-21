@@ -1,0 +1,34 @@
+.title{
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: .2rem 0;
+  h1{
+    position: relative;
+    font-size: .14rem;
+    color: #666;
+    &::before,&::after{
+      content:'';
+      position: absolute;
+      top: 50%;
+      height: .02rem;
+      width: .08rem;
+      background: #d5d5d5;
+    }
+    &::before{
+      left: -.2rem;
+    }
+    &::after{
+      right:-.2rem;
+    }
+  }
+}
+:host{
+  display: block;
+  margin-top: .2rem;
+  margin-bottom: .1rem;
+}
+

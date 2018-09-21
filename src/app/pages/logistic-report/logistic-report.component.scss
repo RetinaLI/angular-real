@@ -1,0 +1,28 @@
+.trans-resource{
+  margin-top: -0.25rem;
+}
+
+.detail{
+  >.name{
+    color: #333;
+  }
+}
+
+.pad-top{
+  margin: 0 .15rem .15rem;
+  padding: .15rem;
+  padding-top: .25rem;
+  position: relative;
+  border-radius: 8px;
+  background-color: #fff;
+  box-shadow: 0px 2px 8px 0px rgba(73, 95, 155, 0.1);
+}
+
+.blue-bold{
+  font-weight: bold;
+}
+
+.tag{
+  color: #333;
+
+}

@@ -1,0 +1,11 @@
+<div class="img-text-sheets"> 
+  <ul class="clearfix">
+    <li *ngFor="let item of sheetsList">
+      <img src="{{ item.img }}" alt="">
+      <div class="sheet-right">
+        <div class="title">{{ item.title }}</div>
+        <span>{{ item.num }}</span>
+      </div>
+    </li>
+  </ul>
+</div>

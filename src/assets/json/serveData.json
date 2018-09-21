@@ -1,0 +1,40 @@
+{
+  "data": {
+    "title": "服务大数据周报",
+    "platform": "福田车联网平台",
+    "reportDate": {
+      "startDate": "2017.08.01",
+      "endDate": "2017/08/31"
+    },
+    "totalSales": 2289,
+    "enterInfo": {
+      "inboundCount": 32,
+      "vehicleCount": 3561,
+      "avgInboundTime": 9258
+    },
+    "brandCarEnterTotal": [
+      {"brand":"欧曼", "inboundCount":3200, "vehicleCount": 2553, "avginboundtime":96},
+      {"brand":"时代", "inboundCount":3102, "vehicleCount": 1828, "avginboundtime":52},
+      {"brand":"欧马可", "inboundCount":2259, "vehicleCount": 1653, "avginboundtime":83},
+      {"brand":"奥铃", "inboundCount":2019, "vehicleCount": 1205, "avginboundtime":66},
+      {"brand":"其他", "inboundCount":1980, "vehicleCount": 1008, "avginboundtime":39}
+    ],
+    "trueInfo": {
+      "totalNum": 657672,
+      "realNum": 337823,
+      "notRealNum": 247829
+    },
+    "falseData": [
+      {"brandName": "欧曼","notRealNum": 40000},
+      {"brandName": "时代","notRealNum": 7000},
+      {"brandName": "欧马可","notRealNum": 3400},
+      {"brandName": "奥铃","notRealNum": 2000},
+      {"brandName": "其他","notRealNum": 13000}
+    ],
+    "activeInfo": {
+      "sendTotal": 18923,
+      "sendSing": 17654,
+      "resolve": 9258
+    }
+  }
+}

@@ -1,0 +1,18 @@
+<div class="section clearfix">
+  <div class="section-title" *ngIf="title">
+    <div class="theme-h1" *ngIf="theme==='h1'">
+      <img class="l" src="assets/images/part-title-left.png" alt="">
+      <span class="num">{{orderNumber}}</span>
+      <span class="name">{{title}}</span>
+      <img class="r" src="assets/images/part-title-right.png" alt="">
+    </div>
+    <div class="theme-h2" *ngIf="theme==='h2'">
+      <h3>{{title}}</h3>
+      <p class="line"></p>
+    </div>
+    <app-level2-title [name]="title" *ngIf="theme==='h3'"></app-level2-title>
+  </div>
+  <div class="section-content">
+    <ng-content></ng-content>
+  </div>
+</div>

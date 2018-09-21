@@ -1,0 +1,31 @@
+<div class="flex progress-content" [style.margin-bottom]="marginBottom + 'rem'" *ngFor="let item of data; let i = index">
+  <p class="title">
+    <i class="lift" *ngIf="item.lift" [ngClass]="liftClass[item.lift | toNumber]"></i>
+    <i class="font12 sort" *ngIf="sort && !sortLayout" [ngClass]="'sort-0' + (i + 1)">{{i > 2 ? i + 1 : ''}}</i>
+    <i class="font12 sort" *ngIf="sort && sortLayout">{{i + 1}}</i>
+    <span class="font12 text" [style.width]="setTitleWidth">{{item.title}}</span>
+  </p>
+  <div class="progress">
+    <p class="progress-all" *ngIf="!special" [style.width]="layout ? (item.progress | toNumber)  + '%' : '100%'">
+      <b class="progress-line"
+         [ngClass]="bgColor"
+         [style.width]="layout ? '100%' : (item.progress | toNumber) + '%'"></b>
+      <span class="font12 num" [ngClass]="textColor">{{item.progress | unit: unit}}</span>
+      <span class="font12 blue problem" *ngIf="item.problem">{{item.problem}}</span>
+    </p>
+    <p class="progress-all" *ngIf="special" [style.width]="layout ? (perNums[i] | toNumber)  + '%' : '100%'">
+      <b class="progress-line"
+         [ngClass]="bgColor"
+         [style.width]="layout ? '100%' : (perNums[i] | toNumber) + '%'"></b>
+      <span class="font12 num" [ngClass]="textColor">{{item.progress | unit: unit}}</span>
+      <span class="font12 blue problem" *ngIf="item.problem">{{item.problem}}</span>
+    </p>
+    <p class="progress-all progress-sec-all" *ngIf="item.progressTwo" [style.width]="layout ? (item.progressTwo | toNumber)  + '%' : '100%'">
+      <b class="progress-line"
+         [ngClass]="bgSecColor"
+         [style.width]="layout ? '100%' : (item.progressTwo | toNumber) + '%'"></b>
+      <span class="font12 num" [ngClass]="textSecColor">{{item.progressTwo | unit: unit}}</span>
+      <span class="font12 blue problem" *ngIf="item.problem">{{item.problem}}</span>
+    </p>
+  </div>
+</div>

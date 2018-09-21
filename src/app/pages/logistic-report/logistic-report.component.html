@@ -1,0 +1,112 @@
+<div class="page-body">
+  <app-top-nav theme="logistic" [bannerInfo]="bannerInfo"></app-top-nav>
+  <app-section theme="h1" title="运输资源" class="trans-resource">
+    <app-account-if-add [data] = "accountIfAddData" [showNum]="true" ></app-account-if-add>
+    <div class="detail">
+      本周新增
+      <span *ngFor="let item of plusData; let i = index">
+        <span class="name">{{item[0] }} </span>
+        <span class="val blue-bold">{{item[1]}}</span>
+        <span class="tag" *ngIf="i !== plusData.length-1">、</span>
+        <span class="tag" *ngIf="i === plusData.length-1">；</span>
+      </span>
+    </div>
+  </app-section>
+
+  <app-section theme="h1" title="运输概况">
+    <app-pie-list [data]="transportConditionData" [pieTxt]="total" labelColor="#4475FD"></app-pie-list>
+    <div class="detail">
+      <span class="name">本周运单总数为</span><span class=" blue-bold">2233</span>，
+      <span class="name">较上周增加</span><span class=" blue-bold">2233单</span>，
+      <span class="name">及时起运率为</span><span class=" blue-bold">71%</span>,
+      <span class="name">较上周上涨</span><span class=" blue-bold">2%</span>;
+      <span class="name">及时送达率为</span><span class=" blue-bold">90%</span>,
+      <span class="name">较上周下降</span><span class=" blue-bold">5%</span>
+    </div>
+  </app-section>
+
+  <app-section theme="h1" title="异常运输情况">
+    <app-bar [data]="startShipData" [name]="'cc1'"></app-bar>
+    <app-level2-title [name]="'未及时起运承运商TOP3'"></app-level2-title>
+    <app-sort-list [data]="noStartShip3Data" [sort]="true" ></app-sort-list>
+  </app-section>
+
+  <div class="pad-top">
+    <app-bar [data]="startShipData" [name]="'cc2'" [colorBar]="'#30A2DF'"></app-bar>
+    <app-level2-title [name]="'未及时送达承运商TOP3'"></app-level2-title>
+    <app-sort-list [data]="noStartShip3Data" [sort]="true" ></app-sort-list>
+  </div>
+
+  <div class="pad-top">
+    <app-bar [data]="startShipData" [name]="'cc3'" [colorBar]="'#3B73DB'"></app-bar>
+    <app-level2-title [name]="'里程异常承运商TOP3'"></app-level2-title>
+    <app-sort-list [data]="noStartShip3Data" [sort]="true" ></app-sort-list>
+  </div>
+
+  <div class="pad-top">
+    <app-bar [data]="startShipData" [name]="'cc4'" [colorBar]="'#7E71D3'"></app-bar>
+    <app-level2-title [name]="'天线预警承运商TOP3'"></app-level2-title>
+    <app-sort-list [data]="noStartShip3Data" [sort]="true" ></app-sort-list>
+  </div>
+
+  <div class="pad-top">
+    <app-bar [data]="startShipData" [name]="'cc5'" [colorBar]="'#449BFD'"></app-bar>
+    <app-level2-title [name]="'异常配货承运商TOP3'"></app-level2-title>
+    <app-sort-list [data]="noStartShip3Data" [sort]="true" ></app-sort-list>
+  </div>
+
+  <app-section theme="h1" title="运输质量评价">
+    <app-level2-title [name]="'运输质量较好的品牌TOP3'"></app-level2-title>
+    <app-progress [data]= "brandGood3Data"  unit="f" layout="true"></app-progress>
+    <app-level2-title [name]="'运输质量较差的品牌'"></app-level2-title>
+    <div class="detail">
+      <span *ngFor="let item of brandPoor3Data; let i = index">
+        <span class="blue-bold">{{item}}</span>
+        <span class="tag" *ngIf="i !== brandPoor3Data.length-1">、</span>
+      </span>
+      为较差的品牌
+    </div>
+  </app-section>
+
+  <div class="pad-top">
+    <app-level2-title [name]="'运输质量较好的物流部TOP3'"></app-level2-title>
+    <app-progress [data]= "departmentGood3Data"  unit="f" layout="true"></app-progress>
+    <app-level2-title [name]="'运输质量较差的物流部'"></app-level2-title>
+    <div class="detail">
+      <span *ngFor="let item of departmentPoor3Data; let i = index">
+        <span class="blue-bold">{{item}}</span>
+        <span class="tag" *ngIf="i !== departmentPoor3Data.length-1">、</span>
+      </span>
+      为运输质量较较差的物流部
+    </div>
+  </div>
+
+  <div class="pad-top">
+    <app-level2-title [name]="'运输质量较好的承运商TOP3'"></app-level2-title>
+    <app-sort-list [data]= "carrierGood3Data"  unit="f" sort="true" ></app-sort-list>
+    <app-level2-title [name]="'运输质量较差的承运商'"></app-level2-title>
+    <div class="detail">
+      <span *ngFor="let item of carrierPoor3Data; let i = index">
+        <span class="blue-bold">{{item}}</span>
+        <span class="tag" *ngIf="i !== carrierPoor3Data.length-1">、</span>
+      </span>
+      为运输质量较较差的承运商
+    </div>
+  </div>
+
+  <div class="pad-top">
+    <app-level2-title [name]="'得分最高的司机排名TOP3'"></app-level2-title>
+    <app-sort [data]= "driverGood3Data"></app-sort>
+    <app-level2-title [name]="'得分最低的司机排名'"></app-level2-title>
+    <div class="detail">
+      <span *ngFor="let item of driverPoor3Data; let i = index">
+        <span class="blue-bold">{{item}}</span>
+        <span class="tag" *ngIf="i !== driverPoor3Data.length-1">、</span>
+      </span>
+      为得分最差的司机
+    </div>
+  </div>
+
+  <app-logo-bottom></app-logo-bottom>
+</div>
+

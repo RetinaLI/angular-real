@@ -1,0 +1,31 @@
+@import 'variable';
+
+.enter-total {
+  height: auto;
+  .theme-h2 {
+    margin: .27rem 0 .3rem;
+  }
+}
+
+.serve-facticity {
+  .true-list {
+    padding-top: .4rem;
+  }
+}
+
+.active-serve {
+  .active-info {
+    margin: .26rem 0 .4rem;
+    text-align: center;
+    .title {
+      margin-bottom: .09rem;
+      color: #666;
+      font-size: .12rem;
+      line-height: .18rem;
+    }
+    span {
+      color: $blue;
+      font-size: .24rem;
+    }
+  }
+}

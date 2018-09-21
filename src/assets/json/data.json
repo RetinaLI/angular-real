@@ -1,0 +1,542 @@
+{
+  "data": {
+    "title": "周",
+    "platform": "福田车联网平台",
+    "reportDate": {
+      "endDate": "2018/09/16",
+      "startDate": "2018/09/10"
+    },
+    "totalSales": 2289,
+    "carSalesJson": {
+      "mapList": [
+        {
+          "province": "山东省",
+          "value": 1935
+        },
+        {
+          "province": "北京市",
+          "value": 1824
+        },
+        {
+          "province": "河北省",
+          "value": 1695
+        },
+        {
+          "province": "河南省",
+          "value": 1660
+        },
+        {
+          "province": "广东省",
+          "value": 1263
+        },
+        {
+          "province": "江苏省",
+          "value": 1140
+        },
+        {
+          "province": "浙江省",
+          "value": 997
+        },
+        {
+          "province": "安徽省",
+          "value": 924
+        },
+        {
+          "province": "山西省",
+          "value": 684
+        },
+        {
+          "province": "上海市",
+          "value": 570
+        },
+        {
+          "province": "四川省",
+          "value": 569
+        },
+        {
+          "province": "辽宁省",
+          "value": 498
+        },
+        {
+          "province": "江西省",
+          "value": 406
+        },
+        {
+          "province": "黑龙江省",
+          "value": 399
+        },
+        {
+          "province": "湖北省",
+          "value": 355
+        },
+        {
+          "province": "福建省",
+          "value": 342
+        },
+        {
+          "province": "内蒙古自治区",
+          "value": 317
+        },
+        {
+          "province": "陕西省",
+          "value": 296
+        },
+        {
+          "province": "新疆维吾尔自治区",
+          "value": 286
+        },
+        {
+          "province": "天津市",
+          "value": 271
+        },
+        {
+          "province": "贵州省",
+          "value": 212
+        },
+        {
+          "province": "湖南省",
+          "value": 209
+        },
+        {
+          "province": "广西壮族自治区",
+          "value": 76208
+        },
+        {
+          "province": "云南省",
+          "value": 182
+        },
+        {
+          "province": "重庆市",
+          "value": 182
+        },
+        {
+          "province": "西藏自治区",
+          "value": 171
+        },
+        {
+          "province": "吉林省",
+          "value": 125
+        },
+        {
+          "province": "宁夏回族自治区",
+          "value": 85
+        },
+        {
+          "province": "海南省",
+          "value": 77
+        },
+        {
+          "province": "甘肃省",
+          "value": 61
+        },
+        {
+          "province": "青海省",
+          "value": 24
+        }
+      ],
+      "totalNum": 123840,
+      "desc": "按省统计经销商实销车辆数"
+    },
+    "stockCountJson": {
+      "mapList": [
+        {
+          "province": "山东省",
+          "value": 1935
+        },
+        {
+          "province": "北京市",
+          "value": 1824
+        },
+        {
+          "province": "河北省",
+          "value": 1695
+        },
+        {
+          "province": "河南省",
+          "value": 1660
+        },
+        {
+          "province": "广东省",
+          "value": 1263
+        },
+        {
+          "province": "江苏省",
+          "value": 1140
+        },
+        {
+          "province": "浙江省",
+          "value": 997
+        },
+        {
+          "province": "安徽省",
+          "value": 924
+        },
+        {
+          "province": "山西省",
+          "value": 684
+        },
+        {
+          "province": "上海市",
+          "value": 570
+        },
+        {
+          "province": "四川省",
+          "value": 569
+        },
+        {
+          "province": "辽宁省",
+          "value": 498
+        },
+        {
+          "province": "江西省",
+          "value": 406
+        },
+        {
+          "province": "黑龙江省",
+          "value": 399
+        },
+        {
+          "province": "湖北省",
+          "value": 355
+        },
+        {
+          "province": "福建省",
+          "value": 342
+        },
+        {
+          "province": "内蒙古自治区",
+          "value": 317
+        },
+        {
+          "province": "陕西省",
+          "value": 296
+        },
+        {
+          "province": "新疆维吾尔自治区",
+          "value": 286
+        },
+        {
+          "province": "天津市",
+          "value": 271
+        },
+        {
+          "province": "贵州省",
+          "value": 212
+        },
+        {
+          "province": "湖南省",
+          "value": 209
+        },
+        {
+          "province": "广西壮族自治区",
+          "value": 76208
+        },
+        {
+          "province": "云南省",
+          "value": 182
+        },
+        {
+          "province": "重庆市",
+          "value": 182
+        },
+        {
+          "province": "西藏自治区",
+          "value": 171
+        },
+        {
+          "province": "吉林省",
+          "value": 125
+        },
+        {
+          "province": "宁夏回族自治区",
+          "value": 85
+        },
+        {
+          "province": "海南省",
+          "value": 77
+        },
+        {
+          "province": "甘肃省",
+          "value": 61
+        },
+        {
+          "province": "青海省",
+          "value": 24
+        }
+      ],
+      "total": 17967
+    },
+    "saleRankJson": {
+      "mapList": [
+        {
+          "brandOrType": "伽途",
+          "provinceRank": [
+            {
+              "province": "山东省",
+              "value": 1231
+            },
+            {
+              "province": "陕西省",
+              "value": 1231
+            },
+            {
+              "province": "福建省",
+              "value": 1231
+            }
+          ]
+        },
+        {
+          "brandOrType": "伽途",
+          "provinceRank": [
+            {
+              "province": "山东省",
+              "value": 531
+            },
+            {
+              "province": "陕西省",
+              "value": 1231
+            },
+            {
+              "province": "福建省省",
+              "value": 831
+            }
+          ]
+        },
+        {
+          "brandOrType": "欧曼",
+          "provinceRank": [
+            {
+              "province": "山东省",
+              "value": 1231
+            },
+            {
+              "province": "陕西省",
+              "value": 1231
+            },
+            {
+              "province": "福建省",
+              "value": 1231
+            }
+          ]
+        },
+        {
+          "brandOrType": "欧马可",
+          "provinceRank": [
+            {
+              "province": "山东省",
+              "value": 1231
+            },
+            {
+              "province": "陕西省",
+              "value": 1231
+            },
+            {
+              "province": "福建省",
+              "value": 1231
+            }
+          ]
+        },
+        {
+          "brandOrType": "伽途",
+          "provinceRank": [
+            {
+              "province": "山东省",
+              "value": 1231
+            },
+            {
+              "province": "陕西省",
+              "value": 1231
+            },
+            {
+              "province": "福建省",
+              "value": 1231
+            }
+          ]
+        }
+      ]
+    },
+    "stockRankJson": {
+      "mapList": [
+        {
+          "brandOrType": "欧曼",
+          "value": 8853
+        },
+        {
+          "brandOrType": "欧马可",
+          "value": 4653
+        },
+        {
+          "brandOrType": "奥铃",
+          "value": 3434
+        },
+        {
+          "brandOrType": "瑞沃",
+          "value": 537
+        },
+        {
+          "brandOrType": "时代",
+          "value": 494
+        },
+        {
+          "brandOrType": "雷萨",
+          "value": 267
+        },
+        {
+          "brandOrType": "伽途",
+          "value": 1
+        }
+      ],
+      "total": 18239,
+      "desc": "按品牌或者车型查询库存排名情况"
+    },
+    "noSaleJson": {
+      "mapList": [
+        {
+          "actualSalesNum": 6847,
+          "totalNum": 512556
+        }
+      ]
+    },
+    "noSaleInfoJson": {
+      "mapList": [
+        {
+          "actualSalesNum": 1,
+          "totalNum": 3,
+          "brandOrType": "伽途"
+        },
+        {
+          "actualSalesNum": 1,
+          "totalNum": 1,
+          "brandOrType": "图雅诺"
+        },
+        {
+          "actualSalesNum": 828,
+          "totalNum": 18673,
+          "brandOrType": "奥铃"
+        },
+        {
+          "actualSalesNum": 1,
+          "totalNum": 16062,
+          "brandOrType": "工程车"
+        },
+        {
+          "actualSalesNum": 1,
+          "totalNum": 8,
+          "brandOrType": "拓路者"
+        },
+        {
+          "actualSalesNum": 631,
+          "totalNum": 6778,
+          "brandOrType": "时代"
+        },
+        {
+          "actualSalesNum": 1,
+          "totalNum": 2,
+          "brandOrType": "服务车"
+        },
+        {
+          "actualSalesNum": 4077,
+          "totalNum": 428021,
+          "brandOrType": "欧曼"
+        },
+        {
+          "actualSalesNum": 839,
+          "totalNum": 23834,
+          "brandOrType": "欧马可"
+        },
+        {
+          "actualSalesNum": 282,
+          "totalNum": 9043,
+          "brandOrType": "瑞沃"
+        },
+        {
+          "actualSalesNum": 1,
+          "totalNum": 45,
+          "brandOrType": "萨普"
+        },
+        {
+          "actualSalesNum": 1,
+          "totalNum": 1,
+          "brandOrType": "蒙派克"
+        },
+        {
+          "actualSalesNum": 190,
+          "totalNum": 10063,
+          "brandOrType": "雷萨"
+        },
+        {
+          "actualSalesNum": 1,
+          "totalNum": 22,
+          "brandOrType": "风景"
+        }
+      ]
+    },
+    "realSaleJson": {
+      "mapList": [
+        {
+          "actualSalesNum": 174750,
+          "totalNum": 215834
+        }
+      ]
+    },
+    "realSaleInfoJson": {
+      "mapList": [
+        {
+          "actualSalesNum": 1113,
+          "totalNum": 5566,
+          "brandOrType": "奥铃"
+        },
+        {
+          "actualSalesNum": 6,
+          "totalNum": 25,
+          "brandOrType": "工程车"
+        },
+        {
+          "actualSalesNum": 6,
+          "totalNum": 25,
+          "brandOrType": "小汽车"
+        },
+        {
+          "actualSalesNum": 500,
+          "totalNum": 1492,
+          "brandOrType": "时代"
+        },
+        {
+          "actualSalesNum": 454,
+          "totalNum": 801,
+          "brandOrType": "服务车"
+        },
+        {
+          "actualSalesNum": 154897,
+          "totalNum": 172161,
+          "brandOrType": "欧曼"
+        },
+        {
+          "actualSalesNum": 11190,
+          "totalNum": 15016,
+          "brandOrType": "欧辉"
+        },
+        {
+          "actualSalesNum": 1458,
+          "totalNum": 7523,
+          "brandOrType": "欧马可"
+        },
+        {
+          "actualSalesNum": 358,
+          "totalNum": 1334,
+          "brandOrType": "瑞沃"
+        },
+        {
+          "actualSalesNum": 323,
+          "totalNum": 1123,
+          "brandOrType": "迷迪"
+        },
+        {
+          "actualSalesNum": 4755,
+          "totalNum": 11896,
+          "brandOrType": "雷萨"
+        }
+      ]
+    }
+  }
+}

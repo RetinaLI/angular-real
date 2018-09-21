@@ -1,0 +1,16 @@
+<div class="flex sort-content" *ngFor="let item of data; let i = index">
+  <p class="title">
+    <i class="lift" *ngIf="item.lift" [ngClass]="liftClass[item.lift | number]"></i>
+    <i class="font12 sort" *ngIf="sort" [ngClass]="'sort-0' + (i + 1)">{{i > 2 ? i + 1 : ''}}</i>
+  </p>
+  <div class="list">
+    <div class="flex list-line" [ngClass]="{'line': item.note === undefine}">
+      <p class="font12 title">{{item.title}}</p>
+      <span class="font12 blue" [ngClass]="{'bgPro': item.note !== undefine}">{{item.progress | unit: unit}}</span>
+    </div>
+    <p class="note" *ngIf="item.note">
+      <span class="font12 note-count">运单总数<i class="font12 blue note-l">{{item.note}}</i></span>
+      <span class="font12 note-count">异常运单数<i class="font12 blue note-l">{{item.errNote}}</i></span>
+    </p>
+  </div>
+</div>
