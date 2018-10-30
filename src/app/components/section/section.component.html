@@ -12,6 +12,7 @@
     </div>
     <app-level2-title [name]="title" *ngIf="theme==='h3'"></app-level2-title>
   </div>
+  <div *ngIf="origin" class="origin">数据来源：{{origin}}</div>
   <div class="section-content">
     <ng-content></ng-content>
   </div>

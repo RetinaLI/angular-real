@@ -29,9 +29,9 @@ export class PieListComponent implements OnInit {
     this.renderChart();
 
   };
-
+  private colors: string[] = $FIVE_COLORS;
   private pieTxt: string = '库存占比';
-  private data: IMapData[] = [];
+  data: IMapData[] = [];
   private sum: number;
   private pieChartOpt = {
     tooltip: {
@@ -62,7 +62,6 @@ export class PieListComponent implements OnInit {
     ],
     animation: false
   };
-  private colors: string[] = $FIVE_COLORS;
   private chart = null;
   constructor() { }
 

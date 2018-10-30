@@ -32,7 +32,18 @@ export class ProgressComponent implements OnInit {
    *
    */
 
-  @Input() data: IProgressInterface[];
+  @Input('data') set _data(data: IProgressInterface[]) {
+    this.data = data || [];
+    if (this.data) {
+      this.setTitleWidth = this.getTitleWidth(this.data);
+      if (this.sort) {
+        this.data = this.sorts(this.data);
+      }
+      if (this.special) {
+        this.perNums = this.getMax(this.data);
+      }
+    }
+  };
   @Input() sort?: boolean = false;
   @Input() sortLayout?: boolean = false;
   @Input() layout?: boolean = false;
@@ -44,6 +55,7 @@ export class ProgressComponent implements OnInit {
   @Input() marginBottom?: number;
   @Input() special?: boolean = false;
 
+  data = [];
   liftClass: string[] = ['up', 'no', 'down'];
   setTitleWidth = '.61rem';
   perNums = [];
@@ -52,16 +64,10 @@ export class ProgressComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.setTitleWidth = this.getTitleWidth(this.data);
-    if (this.sort) {
-      this.data = this.sorts(this.data);
-    }
-    if (this.special) {
-      this.perNums = this.getMax(this.data);
-    }
   }
 
   sorts(data) {
+    if (!data) return;
     data.sort((a, b) => {
       return parseFloat(b.progress) - parseFloat(a.progress);
     });
@@ -69,6 +75,7 @@ export class ProgressComponent implements OnInit {
   }
 
   getMax(data) {
+    if (!data) return;
     let num = [];
     let per = [];
     data.map(ele => {

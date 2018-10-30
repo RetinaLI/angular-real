@@ -1,4 +1,5 @@
 :host {
+  position: relative;
   display: block;
   background-color: #fff;
   border-radius: 8px;
@@ -56,7 +57,14 @@
     }
   }
 }
-
+.origin {
+  position: absolute;
+  right: .2rem;
+  top: .6rem;
+  font-size: .12rem;
+  color: #999;
+  z-index: 9;
+}
 .section-content {
   width: 100%;
 }

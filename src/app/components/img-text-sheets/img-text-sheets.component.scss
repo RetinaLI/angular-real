@@ -1,11 +1,12 @@
 .img-text-sheets ul {
-  padding: 0 .09rem .15rem;
+  li:nth-child(2n+1):nth-last-child(-n+2),
+  li:nth-child(2n+1):nth-last-child(-n+2)~li {
+    margin-bottom: 0;
+  }
   li {
     float: left;
     width: 50%;
-    &.mt {
-      margin-top: .4rem;
-    }
+    margin-bottom: .4rem;
     img {
       margin-right: .16rem;
       width: .32rem;
@@ -16,7 +17,6 @@
       .title {
         color: #666;
         font-size: .12rem;
-        opacity: 0.5;
       }
       span {
         color: #4475FD;

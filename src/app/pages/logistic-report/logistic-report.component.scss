@@ -2,11 +2,6 @@
   margin-top: -0.25rem;
 }
 
-.detail{
-  >.name{
-    color: #333;
-  }
-}
 
 .pad-top{
   margin: 0 .15rem .15rem;
@@ -22,7 +17,15 @@
   font-weight: bold;
 }
 
-.tag{
+.tag, .name{
   color: #333;
-
+}
+.mt-3{
+  margin-top: .4rem;
+  margin-bottom: .38rem;
+}
+.mb-2{
+  ::ng-deep .sort-content{
+    margin-bottom: .22rem;
+  }
 }

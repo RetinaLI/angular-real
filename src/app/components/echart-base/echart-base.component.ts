@@ -10,7 +10,6 @@ export class EchartBaseComponent implements OnInit, AfterViewInit {
 
   @Input("option")
   set _option(_opt){
-    if (!_opt) return;
     this.option = _opt;
     if(this.option) {
       this.renderOption(_opt);

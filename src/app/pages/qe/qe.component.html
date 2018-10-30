@@ -13,7 +13,7 @@
       </li>
     </ul>
   </app-section>
-  <app-section theme="h2" title="各品牌故障级别统计">
+  <app-section theme="h2" title="各{{ reportData?.typeLabel }}故障级别统计" *ngIf="reportData.type === 'carBrand'">
     <ul class="fault-percent-by-type-color-list">
       <li *ngFor="let item of faultByBrandColors; trackBy: trackByFaultByBrandColors">
         <i [style.background-color]="item.color"></i>
@@ -31,7 +31,7 @@
       </li>
     </ul>
   </app-section>
-  <app-section theme="h2" title="各品牌故障率趋势">
+  <app-section theme="h2" title="各{{ reportData?.typeLabel }}故障率趋势" *ngIf="reportData.type === 'carBrand'">
     <div class="chart-wrapper">
       <app-echart-base [option]="faultPercentByTypeOption"></app-echart-base>
     </div>
@@ -40,12 +40,12 @@
     <app-level2-title name="车联网平台故障码TOP5"></app-level2-title>
     <app-sort-list [data]="faultCountList" [sort]="true" unit="c"></app-sort-list>
   </app-section>
-  <app-section theme="h2" title="最长出现故障码在各品牌中的比率" order-number="02">
+  <app-section theme="h2" title="最长出现故障码在各{{ reportData?.typeLabel }}中的比率" order-number="02"  *ngIf="reportData.type === 'carBrand'">
     <app-progress [data]="faultTopOneByTypeList" [layout]="false" unit="%" [marginBottom]=".3"></app-progress>
   </app-section>
   <app-section theme="h1" title="故障处理情况" order-number="03">
     <app-img-text-sheets [sheetsList]="faultFixList"></app-img-text-sheets>
-    <div class="detail">本{{reportData?.timeRangeType}}车联网总计收到发送故障码<span>{{reportData?.faultFixSummary.total}}个</span>，已经向SIBEL进行推送<span>{{reportData?.faultFixSummary.toSIBEL}}个</span>，其中已经处理完毕<span>{{reportData?.faultFixSummary.fix}}个</span>，占比<span>{{(reportData?.faultFixSummary.fix/reportData?.faultFixSummary.total) | number:'1.0-0'}}%</span>，已分发<span>{{reportData?.faultFixSummary.hasOwner}}个</span>，占比<span>{{(reportData?.faultFixSummary.hasOwner/reportData?.faultFixSummary.total) | number:'1.0-0'}}%</span>，待处理<span>{{reportData?.faultFixSummary.open}}个</span>，占比<span>{{(reportData?.faultFixSummary.open/reportData?.faultFixSummary.total) | number:'1.0-0'}}%</span>。</div>
+    <div class="detail">本{{reportData?.timeRangeType}}车联网总计收到发送故障码<span>{{reportData?.faultTreatJson.faultcode}}个</span>，已经向SIBEL进行推送<span>{{reportData?.faultTreatJson.pushed}}个</span>，其中已经处理完毕<span>{{reportData?.faultTreatJson.processed}}个</span>，占比<span>{{(reportData?.faultTreatJson.processed/reportData?.faultTreatJson.faultcode) | number:'1.0-1'}}%</span>，已分发<span>{{reportData?.faultTreatJson.assigne}}个</span>，占比<span>{{(reportData?.faultTreatJson.assigne/reportData?.faultTreatJson.faultcode) | number:'1.0-1'}}%</span>，待处理<span>{{reportData?.faultTreatJson.unprocessed}}个</span>，占比<span>{{(reportData?.faultTreatJson.unprocessed/reportData?.faultTreatJson.faultcode) | number:'1.0-1'}}%</span>。</div>
   </app-section>
   <app-logo-bottom></app-logo-bottom>
 </div>

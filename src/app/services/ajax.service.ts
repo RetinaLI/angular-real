@@ -18,7 +18,7 @@ export class AjaxService {
   }
 
   public get(url: string, params: {} | undefined): Promise<IResponseData> {
-    let headers = new Headers({ 'Content-Type': 'application/json' });
+    let headers = new Headers({ 'Content-Type': 'application/json', 'Accept': 'application/json' });
     return this.request('get', url, params, headers);
   }
 

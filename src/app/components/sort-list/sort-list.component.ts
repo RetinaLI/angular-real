@@ -19,17 +19,21 @@ export class SortListComponent implements OnInit {
    * sort: false; 是否显示排序
    *
    */
-  @Input() data: ISortListInterface[];
+  @Input('data') set _data(data: ISortListInterface[]) {
+    this.data = data || [];
+    if (this.sort && this.data) {
+      this.data = this.sorts(this.data);
+    }
+  };
   @Input() sort?: boolean = false;
   @Input() unit?: '%' | 'k' | 'c' | 'f' | 'n' = '%';
+
+  data = [];
   liftClass: string[] = ['up', 'no', 'down'];
 
   constructor() { }
 
   ngOnInit() {
-    if (this.sort) {
-      this.data = this.sorts(this.data);
-    }
   }
 
   sorts(data) {

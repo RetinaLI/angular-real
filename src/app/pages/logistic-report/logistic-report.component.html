@@ -5,66 +5,75 @@
     <div class="detail">
       本周新增
       <span *ngFor="let item of plusData; let i = index">
-        <span class="name">{{item[0] }} </span>
+        <span class="name tag">{{item[0] }} </span>
         <span class="val blue-bold">{{item[1]}}</span>
         <span class="tag" *ngIf="i !== plusData.length-1">、</span>
-        <span class="tag" *ngIf="i === plusData.length-1">；</span>
+        <span class="tag" *ngIf="i === plusData.length-1"></span>
       </span>
     </div>
   </app-section>
 
   <app-section theme="h1" title="运输概况">
-    <app-pie-list [data]="transportConditionData" [pieTxt]="total" labelColor="#4475FD"></app-pie-list>
+    <app-pie-list [data]="transportConditionData" [pieTxt]="addData.total+ '单'" labelColor="#4475FD"></app-pie-list>
     <div class="detail">
-      <span class="name">本周运单总数为</span><span class=" blue-bold">2233</span>，
-      <span class="name">较上周增加</span><span class=" blue-bold">2233单</span>，
-      <span class="name">及时起运率为</span><span class=" blue-bold">71%</span>,
-      <span class="name">较上周上涨</span><span class=" blue-bold">2%</span>;
-      <span class="name">及时送达率为</span><span class=" blue-bold">90%</span>,
-      <span class="name">较上周下降</span><span class=" blue-bold">5%</span>
+      <span class="name">本周运单总数为</span><span class=" blue-bold">{{addData.total}}单</span>，
+      <span class="name">较上周
+        <span *ngIf="totalYundanM == 1" class=" blue-bold">增加</span>
+        <span *ngIf="totalYundanM == -1" class=" blue-bold">减少</span>
+        <span *ngIf="totalYundanM == 0" class=" blue-bold">相等</span>
+      </span>
+      <span *ngIf="totalYundanM == 1 || totalYundanM == -1" class=" blue-bold">{{addData.totalAddNum}}单</span>，
+      <span class="name">及时起运率为</span><span class=" blue-bold">{{addData.ontimeBeginRate}}%</span>,
+      <span class="name">较上周
+        <span *ngIf="startRateM == 1" class=" blue-bold">上涨</span>
+        <span *ngIf="startRateM == -1" class=" blue-bold">下降</span>
+        <span *ngIf="startRateM == 0" class=" blue-bold">持平</span>
+      </span>
+      <span *ngIf="startRateM == 1 || startRateM == -1" class=" blue-bold">{{addData.beginRateAdd}}% </span>;
+      <span class="name">及时送达率为</span><span class=" blue-bold">{{addData.ontimeEndRate}}% </span>,
+      <span class="name">较上周
+        <span *ngIf="endRateM == 1" class=" blue-bold">上涨</span>
+        <span *ngIf="endRateM == -1" class=" blue-bold">下降</span>
+        <span *ngIf="endRateM == 0" class=" blue-bold">持平</span>
+      </span>
+      <span *ngIf="endRateM == 1 || endRateM == -1" class=" blue-bold">{{addData.endRateAdd}}%</span>.
     </div>
   </app-section>
 
   <app-section theme="h1" title="异常运输情况">
-    <app-bar [data]="startShipData" [name]="'cc1'"></app-bar>
-    <app-level2-title [name]="'未及时起运承运商TOP3'"></app-level2-title>
-    <app-sort-list [data]="noStartShip3Data" [sort]="true" ></app-sort-list>
+    <app-bar [data]="delayBeginCountData" [name]="'cc1'" [legendData]= "['及时起运', '未及时起运']" ></app-bar>
+    <app-level2-title class="mt-3" [name]="'未及时起运承运商TOP3'"></app-level2-title>
+    <app-sort-list class="mb-2" [data]="noStartShip3Data" [sort]="true" ></app-sort-list>
   </app-section>
 
   <div class="pad-top">
-    <app-bar [data]="startShipData" [name]="'cc2'" [colorBar]="'#30A2DF'"></app-bar>
-    <app-level2-title [name]="'未及时送达承运商TOP3'"></app-level2-title>
-    <app-sort-list [data]="noStartShip3Data" [sort]="true" ></app-sort-list>
+    <app-bar [data]="delayEndCountData" [name]="'cc2'" colorBar='#30A2DF' [legendData]= "['及时送达', '未及时送达']" ></app-bar>
+    <app-level2-title class="mt-3" [name]="'未及时送达承运商TOP3'"></app-level2-title>
+    <app-sort-list class="mb-2" [data]="delayEndCouncilsRank" [sort]="true"  ></app-sort-list>
   </div>
 
   <div class="pad-top">
-    <app-bar [data]="startShipData" [name]="'cc3'" [colorBar]="'#3B73DB'"></app-bar>
-    <app-level2-title [name]="'里程异常承运商TOP3'"></app-level2-title>
-    <app-sort-list [data]="noStartShip3Data" [sort]="true" ></app-sort-list>
+    <app-bar [data]="abMileageCountData" [name]="'cc3'" colorBar='#3B73DB' [legendData]= "['里程正常', '里程异常']"></app-bar>
+    <app-level2-title class="mt-3" [name]="'里程异常承运商TOP3'"></app-level2-title>
+    <app-sort-list class="mb-2" [data]="abMileageCouncilsRank" [sort]="true" ></app-sort-list>
   </div>
 
   <div class="pad-top">
-    <app-bar [data]="startShipData" [name]="'cc4'" [colorBar]="'#7E71D3'"></app-bar>
-    <app-level2-title [name]="'天线预警承运商TOP3'"></app-level2-title>
-    <app-sort-list [data]="noStartShip3Data" [sort]="true" ></app-sort-list>
-  </div>
-
-  <div class="pad-top">
-    <app-bar [data]="startShipData" [name]="'cc5'" [colorBar]="'#449BFD'"></app-bar>
-    <app-level2-title [name]="'异常配货承运商TOP3'"></app-level2-title>
-    <app-sort-list [data]="noStartShip3Data" [sort]="true" ></app-sort-list>
+    <app-bar [data]="doubtDistCountData" [name]="'cc5'" colorBar='#7E71D3'  [legendData]= "['正常配货', '异常配货']" ></app-bar>
+    <app-level2-title class="mt-3" [name]="'异常配货承运商TOP3'"></app-level2-title>
+    <app-sort-list class="mb-2" [data]="doubtDistCouncilsRank" [sort]="true" ></app-sort-list>
   </div>
 
   <app-section theme="h1" title="运输质量评价">
-    <app-level2-title [name]="'运输质量较好的品牌TOP3'"></app-level2-title>
+    <app-level2-title name="运输质量较好的{{ reportData?.typeLabel }} TOP3"></app-level2-title>
     <app-progress [data]= "brandGood3Data"  unit="f" layout="true"></app-progress>
-    <app-level2-title [name]="'运输质量较差的品牌'"></app-level2-title>
+    <app-level2-title name="运输质量较差的{{ reportData?.typeLabel }}"></app-level2-title>
     <div class="detail">
       <span *ngFor="let item of brandPoor3Data; let i = index">
         <span class="blue-bold">{{item}}</span>
         <span class="tag" *ngIf="i !== brandPoor3Data.length-1">、</span>
       </span>
-      为较差的品牌
+      为较差的{{ reportData?.typeLabel }}
     </div>
   </app-section>
 

@@ -1,101 +1,224 @@
 {
-  "data": {
-    "title": "物流大数据周报",
-    "platform": "福田车联网平台",
-    "reportDate": {
-      "startDate": "2017.08.01",
-      "endDate": "2017/08/31"
-    },
-    "accountIfAddData": [
-      {"name":"分公司", "number":[32,32]},
-      {"name":"物流部", "number":[352,3660]},
-      {"name":"承运商", "number":[322,3222]},
-      {"name":"司机", "number":[372,392]},
-      {"name":"运输路线", "number":[302,302]},
-      {"name":"位置标点", "number":[302,32]}
+  "title": "周",
+  "platform": "福田车联网平台",
+  "startDate": "2017/09/13",
+  "endDate": "2017/09/20",
+  "transportResources": {
+    "driverNum": [80114,455],
+    "logDepartmentNum": [29,0],
+    "placepointNum": [49,0],
+    "transportRouteNum": [7065,80],
+    "councilsNum": [11644666650,45],
+    "companyBranchNum": [16,12]
+  },
+  "abnormalTransportation": {
+    "delayBeginCount": [
+      ["2018-09-17",100, 33],
+      ["2018-09-17",100, 22],
+      ["2018-09-17",100, 11],
+      ["2018-09-17",100, 55],
+      ["2018-09-17",100, 44],
+      ["2018-09-17",100, 62],
+      ["2018-09-17",100, 53]
     ],
-    "transportCondition": [
+    "delayBeginCouncilsRank": [
       {
-        "name": "待调度",
-        "value": 321
+        "councilsName": "北京盛世祥运输有限公司",
+        "totalNum": 187,
+        "delayBeginRate": 11.0,
+        "delayBeginCount": 1
       },
       {
-        "name": "已发车",
-        "value": 200
+        "councilsName": "北京龙泰物流有限公司",
+        "totalNum": 104,
+        "delayBeginRate": 8.0,
+        "delayBeginCount": 3
       },
       {
-        "name": "已到达",
-        "value": 122
-      },
-      {
-        "name": "异常运单",
-        "value": 142
+        "councilsName": "开封市畅达物流运输有限公司",
+        "totalNum": 119,
+        "delayBeginRate": 6.0,
+        "delayBeginCount": 9
       }
     ],
-    "startShip": [
-      {"date": "Mon", "number":[100, 20]},
-      {"date": "Tue", "number":[60, 20]},
-      {"date": "Wed", "number":[100, 20]},
-      {"date": "Thur", "number":[120, 30]},
-      {"date": "Fri", "number":[70, 20]},
-      {"date": "Sat", "number":[80, 20]},
-      {"date": "Sun", "number":[100, 40]}
+    "delayEndCount": [
+      ["2018-09-17",286, 192],
+      ["2018-09-17",286, 122],
+      ["2018-09-17",286, 132],
+      ["2018-09-17",286, 192],
+      ["2018-09-17",286, 92],
+      ["2018-09-17",286, 62],
+      ["2018-09-17",286, 192]
     ],
-    "noStartShip3":[
-      {"title":"北京金福润田物流有限公司","progress":"20%", "note": 5898, "errNote":322},
-      {"title":"吉林华航实业集团有限公司","progress":"20%","note": 5898, "errNote":322},
-      {"title":"环球众鑫（北京）供应链管理有限公司","progress":"23.44%","note": 5898, "errNote":322}
+    "delayEndCouncilsRank": [
+      {
+        "councilsName": "异常到达公司",
+        "delayEndRate": 7.0,
+        "totalNum": 44,
+        "delayEndCount": 3
+      }, {
+        "councilsName": "北京正运物流有限公司",
+        "delayEndRate": 19.0,
+        "totalNum": 36,
+        "delayEndCount": 7
+      }, {
+        "councilsName": "北京京通华远物流有限公司",
+        "delayEndRate": 22.0,
+        "totalNum": 51,
+        "delayEndCount": 11
+      }
     ],
-    "progressData": [
-      {"title": "欧曼", "progress": "90"},
-      {"title": "欧马可", "progress": "70"},
-      {"title": "欧曼", "progress": "67"}
+    "abMileageCount": [
+      ["2018-09-17",286, 192],
+      ["2018-09-17",286, 122],
+      ["2018-09-17",286, 132],
+      ["2018-09-17",286, 192],
+      ["2018-09-17",286, 92],
+      ["2018-09-17",286, 62],
+      ["2018-09-17",286, 192]
     ],
-    "brandPoor": [
-      "伽途",
-      "雷萨",
-      "欧码"
+    "abMileageCouncilsRank": [
+      {
+        "councilsName": "里程异常公司",
+        "abMileageRate": 7.0,
+        "totalNum": 44,
+        "abMileageCount": 3
+      }, {
+        "councilsName": "北京正运物流有限公司",
+        "abMileageRate": 19.0,
+        "totalNum": 36,
+        "abMileageCount": 7
+      }, {
+        "councilsName": "北京京通华远物流有限公司",
+        "abMileageRate": 22.0,
+        "totalNum": 51,
+        "abMileageCount": 11
+      }
     ],
-    "brandGood3": [
-      {"title": "欧曼", "progress": "90"},
-      {"title": "欧马可", "progress": "70"},
-      {"title": "欧曼", "progress": "67"}
+    "doubtDistCount": [
+      ["2018-09-17",286, 192],
+      ["2018-09-17",286, 122],
+      ["2018-09-17",286, 132],
+      ["2018-09-17",286, 192],
+      ["2018-09-17",286, 92],
+      ["2018-09-17",286, 62],
+      ["2018-09-17",286, 192]
     ],
-    "brandPoor3": [
-      "伽途",
-      "雷萨",
-      "欧码"
-    ],
-    "departmentGood3": [
-      {"title": "南海多功能物流部", "progress": "90"},
-      {"title": "欧马可整车部", "progress": "70"},
-      {"title": "诸城工程销售物流部", "progress": "67"}
-    ],
-    "departmentPoor3": [
-      "南海多功能物流部",
-      "时代南海",
-      "欧马可整车部"
-    ],
-    "carrierGood3": [
-      {"title": "南海多功能承运商", "progress": "90"},
-      {"title": "欧马可整车承运商", "progress": "70"},
-      {"title": "诸城工程销售承运商", "progress": "67"}
-    ],
-    "carrierPoor3": [
-      "1承运商",
-      "2承运商",
-      "3承运商"
-    ],
-    "driverGood3": [
-      {"title": "司机1", "progress": "90"},
-      {"title": "司机2", "progress": "70"},
-      {"title": "司机3", "progress": "67"}
-    ],
-    "driverPoor3": [
-      "1司机",
-      "2司机",
-      "3司机"
+    "doubtDistCouncilsRank": [
+      {
+        "councilsName": "配货异常公司",
+        "doubtDistRate": 7.0,
+        "totalNum": 44,
+        "doubtDistCount": 3
+      }, {
+        "councilsName": "北京正运物流有限公司",
+        "doubtDistRate": 19.0,
+        "totalNum": 36,
+        "doubtDistCount": 7
+      }, {
+        "councilsName": "北京京通华远物流有限公司",
+        "doubtDistRate": 22.0,
+        "totalNum": 51,
+        "doubtDistCount": 11
+      }
     ]
-
+  },
+  "transportationQualityEvaluation": {
+    "brandGradeTop3": [{
+      "brandGrade": 96.9,
+      "brandName": "时代"
+    }, {
+      "brandGrade": 96.7,
+      "brandName": "欧马可"
+    }, {
+      "brandGrade": 96,
+      "brandName": "奥铃"
+    }],
+    "brandGradeLast3": [{
+      "brandGrade": 69.3,
+      "brandName": "雷萨"
+    }, {
+      "brandGrade": 79.4,
+      "brandName": "欧曼"
+    }, {
+      "brandGrade": 89.4,
+      "brandName": "瑞沃"
+    }],
+    "orgGradeTop3": [{
+      "orgGrade": 95.8,
+      "orgName": "南方工程车物流部"
+    }, {
+      "orgGrade": 95.5,
+      "orgName": "诸城工程车销售物流部"
+    }, {
+      "orgGrade": 94.9,
+      "orgName": "宝沃整车物流部"
+    }],
+    "orgGradeLast3": [{
+      "orgGrade": 68.4,
+      "orgName": "密云多功能销售物流部"
+    }, {
+      "orgGrade": 78.9,
+      "orgName": "怀柔重卡销售物流部"
+    }, {
+      "orgGrade": 83.3,
+      "orgName": "潍坊多功能销售物流部"
+    }],
+    "councilsGradeTop3": [{
+      "councilsGrade": 100,
+      "councilsName": "诸城市正瑞达物流有限公司"
+    }, {
+      "councilsGrade": 100,
+      "councilsName": "北京宝通伟达物流有限公司"
+    }, {
+      "councilsGrade": 100,
+      "councilsName": "诸城市国华物流有限公司"
+    }],
+    "councilsGradeLast3": [{
+      "councilsGrade": 69.6,
+      "councilsName": "景德镇恒达物流有限公司"
+    }, {
+      "councilsGrade": 69.8,
+      "councilsName": "重庆市汽车运输（集团）有限责任公司"
+    }, {
+      "councilsGrade": 69.9,
+      "councilsName": "环球众鑫（北京）供应链管理有限公司"
+    }],
+    "driverGradeTop3": [{
+      "driverName": "臧华亮",
+      "driverGrade": 100
+    }, {
+      "driverName": "穆可虎",
+      "driverGrade": 100
+    }, {
+      "driverName": "王德松",
+      "driverGrade": 100
+    }],
+    "driverGradeLast3": [{
+      "driverName": "于永江",
+      "driverGrade": 52.5
+    }, {
+      "driverName": "徐学勇",
+      "driverGrade": 53
+    }, {
+      "driverName": "杨庆江",
+      "driverGrade": 56.6
+    }]
+  },
+  "transportSituation": {
+    "weekBeforeTransportSituation": {
+      "allOrder": 1222,
+      "ontimeEndRate": "22%",
+      "ontimeBeginRate": "32%"
+    },
+    "lastWeekTransportSituation": {
+      "allOrder": 2222,
+      "waitScheNum": 10,
+      "abnormalNum": 20,
+      "ontimeEndRate": "10%",
+      "ontimeBeginRate": "10%",
+      "onroadNum": 40,
+      "arriveNum": 60
+    }
   }
 }

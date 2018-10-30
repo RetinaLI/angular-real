@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { IAccountIfAddData } from './account-if-add.interface';
+import NumberFormat from '../../lib/number-format';
 
 @Component({
   selector: 'app-account-if-add',
@@ -14,7 +15,7 @@ export class AccountIfAddComponent implements OnInit {
   /**
    * data: [{
    *  name: string,
-   *  number: number[], 12 | [100, 12]
+   *  number: number[], 12 | [100, 12] 12表示本周新增的个数
    * }]
    * showNum?: false| true
    */
@@ -24,19 +25,25 @@ export class AccountIfAddComponent implements OnInit {
   @Input("data") set _data(_s: IAccountIfAddData[]){
     if(!_s) return;
     _s.forEach( (val) => {
-      if( typeof(val.number) == 'number' ) {
+      if ( typeof(val.number) == 'number' ) {
+        let result = NumberFormat.render(val.number as number);
         this.onlyOne = true;
         this.showNum = false;
+
+        val.number = [result.value];
+        val.name = val.name.replace(/(\(|（)/g, '$1' + result.unit);
+
       } else {
         this.onlyOne = false;
-        let newAdd = val.number[0]-val.number[1];
+        let newAdd = val.number[1];
         if (newAdd > 0){
-          val.addValue = newAdd + '';
+          val.addValue = "+" + newAdd;
         } else if (newAdd == 0) {
           val.addValue = '';
-        } else{
-          val.addValue = '+' +  (val.number[1]-val.number[0])+'';
         }
+        let result = NumberFormat.render(val.number[0] as number);
+        val.number[0] = result.value;
+        val.name = val.name.replace(/(\(|（)/g, '(' + result.unit);
       }
     })
     this.data = _s;

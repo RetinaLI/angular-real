@@ -1,39 +1,39 @@
-<div class="flex sort">
+<div class="flex sort" *ngIf="data.length > 0">
   <div class="sort-two">
     <i class="icon icon1"></i>
-    <span class="font12 one-icon two" *ngIf="data[0]?.lift" [ngClass]="liftClass[data[0].lift]">2</span>
-    <div class="content" *ngIf="data[0]?.lift">
-      <span class="font12 con-title"><pre class="font12">{{data[0]?.title | sub}}</pre></span>
-      <span class="font12 blue con-pro">{{data[0]?.progress}}</span>
+    <span class="font12 one-icon two" *ngIf="data[0].lift" [ngClass]="liftClass[data[0].lift]">2</span>
+    <div class="content" *ngIf="data[0].lift">
+      <span class="font12 con-title"><pre class="font12">{{data[0].title | sub}}</pre></span>
+      <span class="font12 blue con-pro">{{data[0].progress}}</span>
     </div>
-    <div class="content2" *ngIf="!data[0]?.lift">
-      <span class="font14 blue con-pro con-pro-two">{{data[0]?.progress | unit: 'f'}}</span>
-      <span class="font12 con-title con-title-two"><pre class="font12">{{data[0]?.title}}</pre></span>
+    <div class="content2" *ngIf="!data[0].lift">
+      <span class="font14 blue con-pro con-pro-two">{{data[0].progress | unit: 'f'}}</span>
+      <span class="font12 con-title con-title-two"><pre class="font12">{{data[0].title}}</pre></span>
     </div>
   </div>
   <div class="sort-one">
     <b class="box"></b>
     <i class="icon icon2"></i>
-    <span class="font12 one-icon one" *ngIf="data[1]?.lift" [ngClass]="liftClass[data[1].lift]">1</span>
-    <div class="content" *ngIf="data[1]?.lift">
-      <span class="font12 con-title"><pre class="font12">{{data[1]?.title | sub}}</pre></span>
-      <span class="font12 blue con-pro">{{data[1]?.progress}}</span>
+    <span class="font12 one-icon one" *ngIf="data[1].lift" [ngClass]="liftClass[data[1].lift]">1</span>
+    <div class="content" *ngIf="data[1].lift">
+      <span class="font12 con-title"><pre class="font12">{{data[1].title | sub}}</pre></span>
+      <span class="font12 blue con-pro">{{data[1].progress}}</span>
     </div>
-    <div class="content2" *ngIf="!data[1]?.lift">
-      <span class="font14 blue con-pro con-pro-one">{{data[1]?.progress | unit: 'f'}}</span>
-      <span class="font12 con-title con-title-one"><pre class="font12">{{data[1]?.title}}</pre></span>
+    <div class="content2" *ngIf="!data[1].lift">
+      <span class="font14 blue con-pro con-pro-one">{{data[1].progress | unit: 'f'}}</span>
+      <span class="font12 con-title con-title-one"><pre class="font12">{{data[1].title}}</pre></span>
     </div>
   </div>
   <div class="sort-three">
     <i class="icon icon3"></i>
-    <span class="font12 one-icon three" *ngIf="data[2]?.lift" [ngClass]="liftClass[data[2].lift]">3</span>
-    <div class="content" *ngIf="data[2]?.lift">
-      <span class="font12 con-title"><pre class="font12">{{data[2]?.title | sub}}</pre></span>
-      <span class="font12 blue con-pro">{{data[2]?.progress}}</span>
+    <span class="font12 one-icon three" *ngIf="data[2].lift" [ngClass]="liftClass[data[2].lift]">3</span>
+    <div class="content" *ngIf="data[2].lift">
+      <span class="font12 con-title"><pre class="font12">{{data[2].title | sub}}</pre></span>
+      <span class="font12 blue con-pro">{{data[2].progress}}</span>
     </div>
-    <div class="content2" *ngIf="!data[2]?.lift">
-      <span class="font14 blue con-pro con-pro-three">{{data[2]?.progress | unit:'f'}}</span>
-      <span class="font12 con-title con-title-three"><pre class="font12">{{data[2]?.title}}</pre></span>
+    <div class="content2" *ngIf="!data[2].lift">
+      <span class="font14 blue con-pro con-pro-three">{{data[2].progress | unit:'f'}}</span>
+      <span class="font12 con-title con-title-three"><pre class="font12">{{data[2].title}}</pre></span>
     </div>
   </div>
 </div>

@@ -21,7 +21,7 @@ export class PieComponent implements OnInit {
 
   @Input('pieData') set _pieData(data: IPieData[]) {
     this.pieData = data || [];
-    this.option.series[0].data = this.pieData;
+    this.renderOption();
     this.renderChart();
   }
   @Input("chart-title") chartTitle: string;
@@ -131,7 +131,7 @@ export class PieComponent implements OnInit {
     this.id = `chart-${FOTON_GLOBAL.uuid()}`;
   }
 
-  ngOnInit() {
+  renderOption() {
     this.option.series[0].data = this.pieData;
     this.option.title.textStyle.color = this.titleColor;
 
@@ -158,11 +158,16 @@ export class PieComponent implements OnInit {
       this.option.series[0].label.normal.formatter = '{b|{b}}\n{hr|}{per|{d}%}';
       this.option.series[0].radius = ['45%', '65%'];
     }
+
+  }
+
+  ngOnInit() {
   }
 
   ngAfterViewInit() {
     this.$element = document.getElementById(this.id);
     if(this.height) this.$element.style.height = this.height;
+    this.renderOption();
     this.chart = echarts.init(this.$element);
     this.renderChart();
   }

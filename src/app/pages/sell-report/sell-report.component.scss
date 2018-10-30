@@ -11,16 +11,21 @@
     position: relative;
     z-index: 1;
     h6 {
-      margin-bottom: .09rem;
+      margin-bottom: .05rem;
       font-size: .12rem;
+      color: #aaa;
     }
     p {
-      margin-bottom: .2rem;
+      margin-bottom: .1rem;
       span {
+        color: #333;
         font-size: 12px;
         &.order {
           color: #FFBC53;
           font-weight: bold;
+          display: inline-block;
+          width: .1rem;
+          text-align: right;
         }
         &.province {
           margin: 0 .27rem 0 .1rem;
@@ -31,6 +36,9 @@
         }
       }
     }
+  }
+  .detail {
+    margin-top: .24rem;
   }
 }
 .brands-sell {
@@ -47,10 +55,18 @@
       font-size: .12rem;
       color: #666;
       &:first-child {
+        max-width: 100px;
         color: #333;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
       }
       &.pos-relative {
         position: relative;
+      }
+      span {
+        font-size: .12rem;
+        color: #FFBC53;
       }
     }
   }
@@ -69,6 +85,7 @@
     position: relative;
     z-index: 1;
     h6 {
+      color: #aaa;
       margin-bottom: .09rem;
       font-size: .12rem;
     }
@@ -78,7 +95,6 @@
         font-size: 12px;
         &.order {
           color: #FFBC53;
-          font-weight: bold;
         }
         &.province {
           margin: 0 .27rem 0 .1rem;
@@ -95,7 +111,6 @@
   }
 }
 .brand-repertory {
-  height: 2.75rem;
   .title-blue {
     padding-bottom: 0;
   }
@@ -146,15 +161,28 @@
         }
       }
       td {
-        span {
+        .title {
+          display: block;
           font-size: .12rem;
           color: #666;
         }
-        i {
-          display: block;
+        .num {
           margin-top: .05rem;
-          font-size: .24rem;
+          font-size: .18rem;
           color: #4475FD;
+        }
+        .up {
+          display: block;
+          b {
+            font-weight: normal;
+            font-size: .1rem;
+            background-color: #ffbc53;
+            padding: .03rem .05rem;
+            color: #333;
+            margin-left: .04rem;
+            line-height: .16rem;
+            border-radius: .13rem;
+          }
         }
       }
     }
@@ -164,7 +192,6 @@
   .title-blue {
     padding-bottom: .1rem;
   }
-  padding-bottom: .2rem;
   .legend {
     margin-bottom: .15rem;
     text-align: right;
@@ -194,14 +221,17 @@
     justify-content: flex-start;
     h6 {
       width: .9rem;
-      padding-left: .35rem;
+      // padding-left: .35rem;
       line-height: .4rem;
       color: #333;
       font-size: .12rem;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
     }
     .lines {
       flex: 1;
-      padding-right: .6rem;
+      padding-right: .3rem;
       &>div {
         margin-top: .11rem;
         position: relative;
@@ -220,6 +250,7 @@
         span {
           position: absolute;
           top: -.05rem;
+          right: -.38rem;
           padding-left: .05rem;
           font-size: .12rem;
         }
@@ -231,7 +262,7 @@
 // 地图的映射控件
 .map-visual {
   position: absolute;
-  bottom: 1.4rem;
+  bottom: .95rem;
   right: .15rem;
   .visual {
     width: 1.27rem;

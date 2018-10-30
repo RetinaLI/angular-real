@@ -1,42 +1,42 @@
 <div class="page-body">
   <app-top-nav [theme]="'serve'" [bannerInfo]="bannerInfo"></app-top-nav>
   <!-- 进站统计 -->
-  <app-section theme="h1" title="进站统计" order-number="01" class="enter-total">
+  <app-section theme="h1" title="车辆服务统计" order-number="01" class="enter-total" origin="福田智科">
     <app-account-if-add [data]="summaryData"></app-account-if-add>
     <div class="theme-h2">
-      <h3>各品牌进站车辆</h3>
+      <h3>各{{ reportData?.typeLabel }}车辆服务情况</h3>
       <p class="line"></p>
     </div>
     <table class="table">
       <tr>
-        <td width='55'>品牌</td>
+        <td width='55'>{{ reportData?.typeLabel }}</td>
         <td width='60'>进站总次数</td>
         <td width='60'>涉及车辆数</td>
         <td width='85'>平均进站时长(h)</td>
       </tr>
       <tr *ngFor="let item of enterPart.brandCarEnterTotal">
-        <td>{{ item.brand }}</td>
-        <td>{{ item.inboundCount }}</td>
+        <td>{{ item.brandName }}</td>
+        <td>{{ item.inFenceCount }}</td>
         <td>{{ item.vehicleCount }}</td>
-        <td>{{ item.avginboundtime }}</td>
+        <td>{{ item.avgInFenceTime }}</td>
       </tr>
     </table>
   </app-section>
   <!-- 服务真实性 -->
-  <app-section theme="h1" title="服务真实性" order-number="02" class="serve-facticity">
-    <app-pie [id]="'truePie'" chart-title="服务情况" [pieData]="truePart.trueScale" [chartColor]="truePart.color" [label]=true [nameData]=true></app-pie>
+  <app-section theme="h1" title="服务真实性" order-number="02" class="serve-facticity" origin="福田智科">
+    <app-pie [id]="'truePie'" chart-title="服务情况" [pieData]="trueScale" [chartColor]="truePart.color" [label]="true" [nameData]="true"></app-pie>
     <div class="true-list">
       <app-img-text-sheets [sheetsList]="truePart.facticityList"></app-img-text-sheets>
     </div>
   </app-section>
   <!-- 各品牌不真实比例 -->
-  <app-section theme="h2" title="各品牌不真实比例" class="false-scale">
+  <app-section theme="h2" title="各{{ reportData?.typeLabel }}车辆服务不真实比例" class="false-scale">
     <app-progress [data]="falsePart.falseData"></app-progress>
   </app-section>
   <!-- 主动服务 -->
   <app-section theme="h1" title="主动服务" order-number="03" class="active-serve">
     <div class="active-info">
-      <p class="title">车辆网推送总数</p>
+      <p class="title">车联网推送总数</p>
       <span>{{ activePart.activeInfo.sendTotal }}</span>
     </div>
     <app-img-text-sheets [sheetsList]="activePart.activeList"></app-img-text-sheets>

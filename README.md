@@ -29,6 +29,12 @@ npm start
 
   + <http://localhost:4200/serve.html?data=assets/json/data.json>   `注意后面的参数`
 
+## 发布
+
+  + 在该工程目录打开git bash或者在vscode中启动终端（保证终端是bash环境，具体设置见iov-web-mobile/README.md）
+  + 发布到104： `bash deploy.sh 104`，执行完成后会要求输入密码，输入`foton[zk]`，回车即可发布到104，具体请注意控制台提示。
+  + 发布到生产工程：`bash deploy.sh`，执行完成后会自动提交到`iov-web-api`工程，具体请注意控制台提示。
+
 ## 开发注意事项
 
 1. 严格遵守`angular`、`typescript`、`webpack`开发规范；

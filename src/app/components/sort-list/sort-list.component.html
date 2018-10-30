@@ -3,7 +3,7 @@
     <i class="lift" *ngIf="item.lift" [ngClass]="liftClass[item.lift | number]"></i>
     <i class="font12 sort" *ngIf="sort" [ngClass]="'sort-0' + (i + 1)">{{i > 2 ? i + 1 : ''}}</i>
   </p>
-  <div class="list">
+  <div class="list" [ngClass]="{'hide': item.note === undefine}">
     <div class="flex list-line" [ngClass]="{'line': item.note === undefine}">
       <p class="font12 title">{{item.title}}</p>
       <span class="font12 blue" [ngClass]="{'bgPro': item.note !== undefine}">{{item.progress | unit: unit}}</span>

@@ -15,16 +15,21 @@ export class BarComponent implements OnInit {
   }
   @Input() name?: string = 'bar-chart';
   @Input() colorBar?: string = '#4475FD';
-
+  @Input('legendData') set _legendData(_legendData: string[]) {
+    this.legendData = _legendData;
+    this.renderOption();
+    this.renderChart();
+  }
   private data: IBarData[] = [];
   private chart = null;
+  private legendData: string[] = ['及时起运','未及时起运'];
 
   private barChartOption = {
     calculable: true,
     legend: {
       x:'right',
       bottom: 0,
-      data: ['及时起运', '未及时起运'],
+      data: this.legendData,
       icon: 'circle',
       itemHeight: 8,
       itemWidth: 8,
@@ -125,16 +130,19 @@ export class BarComponent implements OnInit {
       series0.push(val.number[0]);
       series1.push(val.number[1])
     })
+
     this.barChartOption.xAxis.data = xArr;
+    this.barChartOption.legend.data = this.legendData;
     this.barChartOption.series[0].data = series0;
     this.barChartOption.series[1].data = series1;
+    this.barChartOption.series[0].name = this.legendData[0];
+    this.barChartOption.series[1].name = this.legendData[1];
     this.barChartOption.series[0].itemStyle.normal.color = this.colorBar;
   }
 
   renderChart() {
     if(!this.chart) return;
     this.chart.setOption(this.barChartOption);
-
   }
 
   ngOnInit() {

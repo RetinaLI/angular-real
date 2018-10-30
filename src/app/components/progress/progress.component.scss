@@ -4,6 +4,9 @@
   line-height: .18rem;
   padding: .1rem 0 0;
   margin-bottom: .1rem;
+  &:nth-last-child(1) {
+    margin-bottom: 0 !important;
+  }
   .title {
     .text {
       display: inline-block;
@@ -24,7 +27,6 @@
       }
       &.no {
         background: linear-gradient(#fff 0.04rem, #eee 0.04em, #eee 0.07rem, #fff 0.07rem);
-        background: -ms-linear-gradient(#fff 0.04rem, #eee 0.04em, #eee 0.07rem, #fff 0.07rem);
       }
       &.down {
         background: url("../../../assets/images/product/icon-down@2x.png") no-repeat;

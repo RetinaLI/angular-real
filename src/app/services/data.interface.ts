@@ -1,45 +1,130 @@
 import { IMapData } from '../components/map/map.interface';
-import { IBarData } from '../components/bar/bar.interface';
 import { IProgressInterface } from '../components/progress/progress.interface';
 import { ISortListInterface } from '../components/sort-list/sort-list.interface';
-import { ISortInterface } from '../components/sort/sort.interface';
-import { IAccountIfAddData } from '../components/account-if-add/account-if-add.interface';
 
 export enum ReportTimeRangeType {WEEK = '周', MONTH = '月', YEAR = '年'};
 
 export interface IReportData {
   title: string,
+  type: 'carType' | 'carBrand',
+  typeLabel: '品牌' | '车型',
   platform: string,
   reportDate?: {
-    startDate: string,
-    endDate: string,
+    startDate?: string,
+    endDate?: string,
   },
   timeRangeType?: ReportTimeRangeType,
   days?: (number | string)[],
   startDate?: string,    // delete later
-  endDate?: string     // delete later
+  endDate?: string,     // delete later
+  brandName?: string
 }
-
 
 /**
 * 物流数据结构
 */
 export interface ILogisticReportData extends IReportData {
-  accountIfAddData?: IAccountIfAddData[],
-  transportCondition?: IMapData[],
-  startShip?: IBarData[],
+  transportCondition: IMapData[],
   noStartShip3: ISortListInterface[],
   progressData: IProgressInterface[],
-  brandGood3: IProgressInterface[],
-  brandPoor3: string[],
-  departmentGood3: IProgressInterface[],
-  departmentPoor3: string[],
-  carrierGood3: ISortListInterface[],
-  carrierPoor3: string[],
-  driverGood3: ISortInterface[],
-  driverPoor3: string[],
   brandPoor: string[],
-  logisticPoor3: string[]
+  logisticPoor3: string[],
+  transportResources: {
+    driverNum: number[],
+    logDepartmentNum: number[],
+    placepointNum: number[],
+    transportRouteNum: number[],
+    councilsNum: number[],
+    companyBranchNum: number[],
+  },
+  transportSituation: {
+    weekBeforeTransportSituation: {
+      allOrder: number,
+      ontimeEndRate: string,
+      ontimeBeginRate: string
+    }
+    lastWeekTransportSituation: {
+      allOrder: number,
+      waitScheNum: number,
+      abnormalNum: number,
+      ontimeEndRate: string,
+      ontimeBeginRate: string,
+      onroadNum: number,
+      arriveNum: number
+    }
+  },
+  abnormalTransportation: {
+    delayBeginCount: any[],
+    delayBeginCouncilsRank: [
+      {
+        councilsName: string,
+        totalNum: number,
+        delayBeginRate: number,
+        delayBeginCount: number
+      }
+    ],
+    delayEndCount: any[],
+    delayEndCouncilsRank: [
+      {
+        councilsName: string,
+        totalNum: number,
+        delayEndRate: number,
+        delayEndCount: number
+      }
+    ],
+    abMileageCount: any[],
+    abMileageCouncilsRank: [
+      {
+        councilsName: string,
+        totalNum: number,
+        abMileageRate: number,
+        abMileageCount: number
+      }
+    ],
+    doubtDistCount: any[],
+    doubtDistCouncilsRank: [
+      {
+        councilsName: string,
+        totalNum: number,
+        doubtDistRate: number,
+        doubtDistCount: number
+      }
+    ]
+  },
+  transportationQualityEvaluation: {
+    brandGradeTop3: [{
+      brandGrade: number,
+      brandName: string
+    }],
+    brandGradeLast3: [{
+      brandGrade: number,
+      brandName: string
+    }],
+    orgGradeTop3: [{
+      orgGrade: number,
+      orgName: string
+    }],
+    orgGradeLast3: [{
+      orgGrade: number,
+      orgName: string
+    }],
+    councilsGradeTop3: [{
+      councilsGrade: number,
+      councilsName: string
+    }],
+    councilsGradeLast3:[{
+      councilsGrade: number,
+      councilsName: string
+    }],
+    driverGradeTop3: [{
+      driverGrade: number,
+      driverName: string
+    }],
+    driverGradeLast3: [{
+      driverGrade: number,
+      driverName: string
+    }]
+  }
 }
 
 /**
@@ -87,27 +172,34 @@ export interface ISellReportData extends IReportData {
  * 服务数据结构
  */
 export interface IServeReportData extends IReportData {
-  enterInfo: {
-    inboundCount: number[],
-    vehicleCount: number[],
-    avgInboundTime: number[]
-  },
-  brandCarEnterTotal: {}[],
-  trueInfo: {
-    totalNum: number,
-    realNum: number,
-    notRealNum: number
-  },
-  falseData: [
-    {
+  optionWeekInboundInfo: {
+    totalJson: {
+      inFenceCount: number,
+      vehicleCount: number,
+      avgInFenceTime: number
+    },
+    brandJSONArray: {
+      avgInFenceTime: number,
       brandName: string,
+      inFenceCount: number,
+      vehicleCount: number
+    }[],
+  },
+  optionWeekTruthInfo: {
+    truthInfo: {
+      totalNum: number,
+      realNum: number,
       notRealNum: number
+    },
+    truthInfoByBrand: {[x: string]: any}[],
+  },
+  loadWeekTroubleshooting: {
+    troubleshooting: {
+      totalpushed: number,
+      unprocessed: number,
+      assigne: number,
+      processed: number
     }
-  ],
-  activeInfo: {
-    sendTotal: number,
-    sendSing: number,
-    resolve: number
   }
 }
 
@@ -116,43 +208,45 @@ export interface IServeReportData extends IReportData {
  */
 export interface IFaultPercentByLevelAndTypeItem {
   name: string,
-  percents: number[]
+  data: number[]
 }
 export interface IFaultCountItem {
   name: string,
-  count: number
+  codecount: number
 }
 export interface IFaultTopOneByTypeItem {
+  car_brand_name: string,
   name: string,
-  faultName: string,
-  percent: number
+  max: number,
+  total: number
 }
 export interface IFaultPercentByTypeItem {
-  name: string,
+  car_brand_name: string,
   percents: number[]
 }
 export interface IQeReportData extends IReportData {
-  summary: {
-    total: number,
-    car: number,
-    perByCar: number,
-    sumMileage: number,
-    perBy1000: number
+  faultProfileJson: {
+    faultcount: number,
+    carcount: number,
+    faultpercar: number,
+    runmileagecount: number,
+    faultpermileage: number
   },
-  orderByFaultTypeData: {
-    name: string,
-    value: number
+  faultTypeJson: {
+    source_name: string,
+    source: number,
+    source_count: number
   }[],
-  faultByBrandList: IFaultPercentByLevelAndTypeItem[],
-  faultPercentByTypeList: IFaultPercentByTypeItem[],
-  faultCountList: IFaultCountItem[],
-  faultTopOneByTypeList: IFaultTopOneByTypeItem[],
-  faultFixSummary: {
-    total: number,
-    open: number,
-    hasOwner: number,
-    fix: number,
-    toSIBEL: number
+  faultLevelJson: IFaultPercentByLevelAndTypeItem[],
+  faultRateJson: IFaultPercentByTypeItem[],
+  faultRankJson: IFaultCountItem[],
+  faultRatioJson: IFaultTopOneByTypeItem[],
+  faultTreatJson: {
+    faultcode: number,
+    unprocessed: number,
+    assigne: number,
+    processed: number,
+    pushed: number
   }
 }
 
@@ -196,13 +290,11 @@ export interface IProductData extends IReportData {
   }],
   comPieData: [{
     value: number,
-    name: string,
     title: string,
     num: number
   }],
   dealerPieData: [{
     value: number,
-    name: string,
     title: string,
     num: number
   }],

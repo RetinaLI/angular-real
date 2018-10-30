@@ -1,9 +1,7 @@
 import { Injectable } from '@angular/core';
 import { AjaxService } from './ajax.service';
-import queryString from 'query-string';
 import { ILogisticReportData, ISellReportData, IServeReportData, IQeReportData, IProductData, ReportTimeRangeType, IReportData } from './data.interface';
-import { Params, ActivatedRoute } from '@angular/router';
-
+import { ActivatedRoute, ParamMap } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -18,22 +16,31 @@ export class DataService {
   } = {};
 
   constructor(private ajaxService: AjaxService, private route: ActivatedRoute) {
-    this.apiUrl = queryString.parse(document.location.search).data;
+    let search = document.location.search;
+    if(!search || search.length === 0) return;
+    let dataSearch = search.replace('?', '').split('&').find(e => e.indexOf('data=') === 0);
+    dataSearch = dataSearch.substr(dataSearch.indexOf('=') + 1);
+    this.apiUrl = decodeURIComponent(dataSearch);
+    console.info(this.apiUrl);
   }
 
   async getReportData(params?: any) {
-    if (!this.apiUrl) return;
+    if (!this.apiUrl || this.reportData) return;
     let result = await this.ajaxService.get(this.apiUrl, params);
     let days = [];
 
-    if (!result || !result.data) {
+    if (!result || result.success === false) {
       return;
     }
 
-    this.reportData = result.data;
+    this.reportData = result as (IReportData | ILogisticReportData | ISellReportData | IServeReportData | IQeReportData | IProductData);
 
-    this.reportData.startDate = this.reportData.reportDate.startDate;
-    this.reportData.endDate = this.reportData.reportDate.endDate;
+    if(this.reportData.reportDate && this.reportData.reportDate.startDate &&  this.reportData.reportDate.endDate) {
+      this.reportData.startDate = this.reportData.reportDate.startDate;
+      this.reportData.endDate = this.reportData.reportDate.endDate;
+    }
+
+    this.reportData.typeLabel = this.reportData.type === 'carBrand' ? '品牌' : '车型';
 
     let startTime = new Date(FOTON_GLOBAL.Date.getDateByFormat(this.reportData.startDate)).getTime();
     let endTime = new Date(FOTON_GLOBAL.Date.getDateByFormat(this.reportData.endDate)).getTime();

@@ -61,6 +61,9 @@
   .list {
     flex: 1;
   }
+  .hide {
+    overflow: hidden;
+  }
   .list-line {
     justify-content: space-between;
     align-items: center;
@@ -71,6 +74,11 @@
     }
     .title {
       color: $black333;
+
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      flex: 1;
     }
   }
   .bgPro {

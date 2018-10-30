@@ -22,24 +22,24 @@
       <app-progress [sort]="true" [layout]="true" [bgColor]="'yellow'" [data]="visitList" unit="k" [special]="true"></app-progress>
     </app-section>
     <app-section theme="h2" title="车联网产品各企业使用情况">
-      <div class="flex com-use">
+      <div class="flex com-use" *ngIf="comPieData">
         <div class="com-chart">
           <app-pie id="comPie" [chart-title]="comPieData[0].value + '%'" [pieData]="comPieData" [chartColor]="comPieColor" height="1.2rem" titleColor="#4475FD"></app-pie>
         </div>
         <div class="com-use-title">
-          <p class="com-use-title-t">{{comPieData[0].title}}</p>
-          <p class="font12 com-use-title-n">{{comPieData[0].name}}：{{comPieData[0].num}}</p>
+          <p class="com-use-title-t">{{comPieData[0].name}}</p>
+          <p class="font12 com-use-title-n">使用企业数量：{{comPieData[0].num}}</p>
         </div>
       </div>
       <app-level2-title name="车厂端产品使用排行"></app-level2-title>
       <app-sort [data]="sortTopList"></app-sort>
-      <div class="flex com-use com-use-yellow">
+      <div class="flex com-use com-use-yellow" *ngIf="dealerPieData">
         <div class="com-chart">
           <app-pie id="dealerPie" [chart-title]="dealerPieData[0].value + '%'" [pieData]="dealerPieData" [chartColor]="dealerPieColor" height="1.2rem" titleColor="#FFBC53"></app-pie>
         </div>
         <div class="com-use-title">
-          <p class="com-use-title-t">{{dealerPieData[0].title}}</p>
-          <p class="font12 com-use-title-n yellow">{{dealerPieData[0].name}}：{{dealerPieData[0].num}}</p>
+          <p class="com-use-title-t">{{dealerPieData[0].name}}</p>
+          <p class="font12 com-use-title-n yellow">使用企业数量：{{dealerPieData[0].num}}</p>
         </div>
       </div>
       <app-level2-title name="经销商使用排名TOP5"></app-level2-title>

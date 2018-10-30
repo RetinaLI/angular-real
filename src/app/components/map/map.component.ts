@@ -10,7 +10,7 @@ import { $BLUE, $YELLOW } from '../../../global.variable';
 })
 export class MapComponent implements OnInit {
 
-  @Input() mapData: IMapData[];
+  @Input() mapData: IMapData[] = [];
   @Input() name: string;
 
   private themes = {
@@ -38,6 +38,8 @@ export class MapComponent implements OnInit {
     },
     visualMap: {
       show: false,
+      min: 0,
+      max: 10,
       type: 'continuous',
       inRange: {
         color: ['']
@@ -77,11 +79,11 @@ export class MapComponent implements OnInit {
     // 注册地图
     await this.dataService.getChinaJson();
     echarts.registerMap('china', this.dataService.chinaJson);
+
     // 转换为markpoint 数据
-    if(!this.mapData) this.mapData = [];
     let geoCoord = this.dataService.chinaJson.features;
-    let pointData;
-    if(this.name === 'sell') {
+    let pointData = [];
+    if (this.mapData[0] && this.mapData[0].name) {
       pointData = this.mapData.map((v, i) => {
         let coordData = geoCoord.find(x => x.properties.name === v.name);
         let coord = [coordData.properties.cp[0] + '', coordData.properties.cp[1] + ''];
@@ -97,37 +99,6 @@ export class MapComponent implements OnInit {
           }
         }
       }).slice(0, 3);
-    } else {
-      let first = this.mapData[0];
-      let last = this.mapData[this.mapData.length - 1];
-      let fristCoordData = geoCoord.find(x => x.properties.name === first.name);
-      let lastCoordData = geoCoord.find(x => x.properties.name === last.name);
-      let firstCoord = [fristCoordData.properties.cp[0] + '', fristCoordData.properties.cp[1] + ''];
-      let lastCoord = [lastCoordData.properties.cp[0] + '', lastCoordData.properties.cp[1] + ''];
-      pointData = [
-        {
-          name: first.name,
-          coord: firstCoord,
-          value: first.value,
-          label: {
-            show: true,
-            position: 'right',
-            formatter: '{b}',
-            color: this.themes[this.name].markPointLabelColor
-          }
-        },
-        {
-          name: last.name,
-          coord: lastCoord,
-          value: last.value,
-          label: {
-            show: true,
-            position: 'right',
-            formatter: '{b}',
-            color: this.themes[this.name].markPointLabelColor
-          }
-        }
-      ]
     }
 
 
@@ -135,6 +106,8 @@ export class MapComponent implements OnInit {
     this.option.series[0].itemStyle.normal.areaColor = this.themes[this.name].areaColor;
     this.option.series[0].itemStyle.emphasis.areaColor = this.themes[this.name].areaColor;
     this.option.visualMap.inRange.color = this.themes[this.name].color;
+    this.option.visualMap.min = this.mapData[this.mapData.length - 1].value;
+    this.option.visualMap.max = this.mapData[0].value;
 
     this.option.series[0].markPoint.symbol = this.themes[this.name].symbol;
     this.option.series[0].markPoint.data = pointData;

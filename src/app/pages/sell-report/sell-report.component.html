@@ -1,11 +1,11 @@
 <div class="page-body">
   <app-top-nav theme="sell" [bannerInfo]="bannerInfo"></app-top-nav>
   <div class="main">
-    <app-section class="first" theme="h1" title="车辆销售" order-number="01">
+    <app-section class="first" theme="h1" title="各省份销售统计" order-number="01" origin="经销商管理系统">
       <div class="car-sell box">
         <app-map [mapData]="mapDataSell" [name]="'sell'"></app-map>
         <div class="sell-top-province">
-          <h6>销量最高地区排行TOP3</h6>
+          <h6>车辆销售区域TOP3</h6>
           <p *ngFor="let v of mapDataSell.slice(0, 3); let i = index">
             <span class="order">{{i + 1}}</span>
             <span class="province">{{v.name}}</span>
@@ -13,8 +13,7 @@
           </p>
         </div>
         <div class="detail">
-          本周总销量为<span>{{parts.sell.detail.total}}辆</span>车，其中销量最多的地区是{{parts.sell.detail.firstProvince.name}},实销<span>{{parts.sell.detail.firstProvince.name
-            + parts.sell.detail.firstProvince.value}}辆</span>
+          本周总销量为<span>{{parts.sell.detail.total}}辆</span>车，其中销量最多的地区是{{parts.sell.detail.firstProvince.name}},实销<span>{{parts.sell.detail.firstProvince.value}}辆</span>
         </div>
         <div class="map-visual theme1">
           <p class="visual"></p>
@@ -22,17 +21,17 @@
         </div>
       </div>
     </app-section>
-    <app-section theme="h2" title="各品牌车辆销售TOP3">
+    <app-section theme="h2" title="各{{ reportData?.typeLabel }}车辆销售区域TOP3">
       <div class="brands-sell">
         <table class="table">
           <tr>
-            <td>品牌</td>
+            <td>{{ reportData?.typeLabel }}</td>
             <td class="font-color-FFBC53 pos-relative">
-              <span>top1</span>
+              <span>Top1</span>
               <img src="assets/images/icon-top1.png" alt="" class="icon1 icon">
             </td>
             <td class="font-color-FFBC53 pos-relative">
-              top2
+              <span>Top2</span>
               <img src="assets/images/icon-top2.png" alt="" class="icon1 icon">
             </td>
             <td class="font-color-FFBC53 pos-relative">
@@ -42,27 +41,22 @@
           </tr>
           <tr *ngFor="let v of brandSellProvinceOrder">
             <td>{{v.name}}</td>
-            <td>{{v.provinces[0]}}</td>
-            <td>{{v.provinces[1]}}</td>
-            <td>{{v.provinces[2]}}</td>
+            <td>{{v.provinces[0].province}}</td>
+            <td>{{v.provinces[1].province}}</td>
+            <td>{{v.provinces[2].province}}</td>
           </tr>
         </table>
       </div>
     </app-section>
-    <app-section theme="h1" title="库存分布" order-number="02">
+    <app-section theme="h1" title="各省份库存统计" order-number="02" origin="福田智科">
       <div class="repertory">
         <app-map [mapData]="mapDataRepertory" name="repertory"></app-map>
         <div class="repertory-province">
-          <h6>库存最高和最低省份</h6>
-          <p>
-            <span class="order">最高</span>
-            <span class="province">{{mapDataRepertory[0].name}}</span>
-            <span class="num">{{mapDataRepertory[0].value}}</span>
-          </p>
-          <p>
-            <span class="order">最低</span>
-            <span class="province">{{mapDataRepertory[mapDataRepertory.length - 1].name}}</span>
-            <span class="num">{{mapDataRepertory[mapDataRepertory.length - 1].value}}</span>
+          <h6>车辆库存区域TOP3</h6>
+          <p *ngFor="let v of mapDataRepertory.slice(0, 3); let i = index">
+            <span class="order">{{i + 1}}</span>
+            <span class="province">{{v.name}}</span>
+            <span class="num">{{v.value}}</span>
           </p>
         </div>
         <div class="detail">
@@ -76,12 +70,12 @@
         </div>
       </div>
     </app-section>
-    <app-section theme="h2" title="各品牌车辆库存占比">
-      <div class="brand-repertory">
+    <app-section theme="h2" title="各{{ reportData?.typeLabel }}车辆库存占比">
+      <div class="brand-repertory" *ngIf="parts.repertory.brandRepertoryRatyData.length !== 0">
         <app-pie-list [data]="parts.repertory.brandRepertoryRatyData" [pieTxt]="'库存占比'"></app-pie-list>
       </div>
     </app-section>
-    <app-section theme="h1" title="实销情况" order-number="03">
+    <app-section theme="h1" title="实销预警情况" order-number="03" origin="福田智科">
       <div class="real-sell">
         <table>
           <thead>
@@ -94,53 +88,68 @@
           <tbody>
             <tr>
               <td>
-                <span>实销</span>
-                <i>{{parts.realSell.realSellRepertoryRatyData.sell.real}}</i>
+                <span class="title">未报实销总数</span>
+                <i class="num">{{parts.realSell.realSellRepertoryRatyData.sell.real || 0}}</i>
+                <span class="up" *ngIf="1 < 0">
+                  <img src="assets/images/logistic/icon-up.svg" alt="">
+                  <b>+{{parts.realSell.realSellRepertoryRatyData.sell.weekAddTotalNum}}</b>
+                </span>
               </td>
               <td>
-                <span>疑似虚假</span>
-                <i>{{parts.realSell.realSellRepertoryRatyData.sell.sham}}</i>
+                <span  class="title">疑似虚假</span>
+                <i class="num">{{parts.realSell.realSellRepertoryRatyData.sell.sham || 0}}</i>
+                <span class="up" *ngIf="1 < 0">
+                  <img src="assets/images/logistic/icon-up.svg" alt="">
+                  <b>+{{parts.realSell.realSellRepertoryRatyData.sell.weekAddActualNum}}</b>
+                </span>
               </td>
               <td>
-                <span>虚假实销比例</span>
-                <i>{{parts.realSell.realSellRepertoryRatyData.sell.raty * 100 | unit}}</i>
+                <span class="title">虚假实销比例</span>
+                <i class="num">{{(parts.realSell.realSellRepertoryRatyData.sell.raty || 0) * 100 | number:'1.0-1'}}%</i>
               </td>
             </tr>
             <tr>
               <td>
-                <span>库存</span>
-                <i>{{parts.realSell.realSellRepertoryRatyData.repertory.real}}</i>
+                <span class="title">报实销总数</span>
+                <i class="num">{{parts.realSell.realSellRepertoryRatyData.repertory.real || 0}}</i>
+                <span class="up" *ngIf="1 < 0">
+                  <img src="assets/images/logistic/icon-up.svg" alt="">
+                  <b>+{{parts.realSell.realSellRepertoryRatyData.repertory.weekAddTotalNum}}</b>
+                </span>
               </td>
               <td>
-                <span>疑似虚假</span>
-                <i>{{parts.realSell.realSellRepertoryRatyData.repertory.sham}}</i>
+                <span class="title">疑似虚假</span>
+                <i class="num">{{parts.realSell.realSellRepertoryRatyData.repertory.sham || 0}}</i>
+                <span class="up" *ngIf="1 < 0">
+                  <img src="assets/images/logistic/icon-up.svg" alt="">
+                  <b>+{{parts.realSell.realSellRepertoryRatyData.repertory.weekAddActualNum}}</b>
+                </span>
               </td>
               <td>
-                <span>虚假库存比例</span>
-                <i>{{parts.realSell.realSellRepertoryRatyData.repertory.raty * 100 | unit}}</i>
+                <span class="title">虚假库存比例</span>
+                <i class="num">{{(parts.realSell.realSellRepertoryRatyData.repertory.raty || 0) * 100 |  number:'1.0-1'}}%</i>
               </td>
             </tr>
           </tbody>
         </table>
       </div>
     </app-section>
-    <app-section theme="h2" title="各品牌车联网实销情况">
+    <app-section theme="h2" title="各{{ reportData?.typeLabel }}车联网疑似虚假情况">
       <div class="platform-sell">
         <div class="charts">
           <p class="legend">
             <span class="icon icon-blue">疑似虚假实销</span>
             <span class="icon icon-yellow">疑似虚假库存</span>
           </p>
-          <!-- <app-progress [data]="parts.realSell.platformRealSell" [layout]="true"></app-progress> -->
           <div *ngFor="let v of parts.realSell.platformRealSell">
             <div *ngIf="v" class="chart-item flex">
               <h6 class="">{{v.name}}</h6>
               <div class="lines">
-                <div class="line-blue" [style.width]="v.sellRaty/parts.realSell.maxNum*100+'%'">
-                  <span>{{v.sellRaty * 100 | unit}}%</span>
+                <div class="line-blue" [style.width]="(v.saleRaty*100)+'%'">
+                  <span>{{(v.saleRaty || 0) * 100 |  number:'1.0-1'}}%</span>
                 </div>
-                <div class="line-yellow" [style.width]="v.repertoryRaty/parts.realSell.maxNum*100 + '%'">
-                  <span>{{v.repertoryRaty * 100 | unit}}%</span>
+                <div class="line-yellow" [style.width]="(v.repertoryRaty)*100 + '%'">
+                  <span>{{(v.repertoryRaty || 0) * 100 |  number:'1.0-1'}}%</span>
                 </div>
               </div>
             </div>

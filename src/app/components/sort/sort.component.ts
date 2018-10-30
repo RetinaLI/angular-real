@@ -24,5 +24,4 @@ export class SortComponent implements OnInit {
 
   ngOnInit() {
   }
-
 }

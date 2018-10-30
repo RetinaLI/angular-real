@@ -13,11 +13,13 @@ export default class NumberFormat {
         break;
       case value >= 10000 && value < 100000000:
         unit = '万';
-        newValue = Math.round(value / 10000);
+        newValue = Math.round(value / 100);
+        newValue = newValue / 100;
         break;
       case value >= 100000000:
         unit = '亿';
-        newValue = Math.round(value / 100000000);
+        newValue = Math.round(value / 1000000);
+        newValue = newValue / 100;
         break;
     }
     return {

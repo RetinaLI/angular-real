@@ -23,7 +23,7 @@
             "polyfills": "src/polyfills.ts",
             "tsConfig": "src/tsconfig.app.json",
             "assets": [
-              "src/favicon.ico",
+              "src/itink.png",
               "src/assets"
             ],
             "styles": [
@@ -51,7 +51,7 @@
               "outputHashing": "all",
               "sourceMap": false,
               "extractCss": true,
-              "namedChunks": true,
+              "namedChunks": false,
               "aot": true,
               "extractLicenses": true,
               "vendorChunk": true,
@@ -93,7 +93,7 @@
             ],
             "scripts": [],
             "assets": [
-              "src/favicon.ico",
+              "src/itink.png",
               "src/assets"
             ]
           }

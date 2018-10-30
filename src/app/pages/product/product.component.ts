@@ -19,7 +19,7 @@ export class ProductComponent implements OnInit {
   bannerInfo: ITopNavData = {
     endDate: '',
     startDate: '',
-    title: `用户使用大数据报告`,
+    title: `用户使用大数据报`,
     platform: '福田车联网平台'
   };
   accountIfAdd: IAccountIfAddData[] = [{
@@ -39,26 +39,16 @@ export class ProductComponent implements OnInit {
   dealerList: ISortListInterface[] = [];
   dealerScale: any = [{
     value: 0,
-    name: '',
+    name: ''
   }];
   parkScale: any = [{
     value: 0,
-    name: '',
+    name: ''
   }];
   visitOption: any;
   chartSum: any = {};
-  comPieData: any = [{
-    value: 0,
-    name: '',
-    title: '',
-    num: 0
-  }];
-  dealerPieData: any = [{
-    value: 0,
-    name: '',
-    title: '',
-    num: 0
-  }];
+  comPieData: any;
+  dealerPieData: any;
 
   dealerColor: string[] = ['#4475FD', '#3DE3A3', '#FFBC53', '#FFD94F', '#F56C6C', '#D5D5D5'];
   comPieColor: string[] = ['#4475FD', '#D5D5D5'];
@@ -80,7 +70,7 @@ export class ProductComponent implements OnInit {
   async ngOnInit() {
     await this.dataService.getReportData();
     let reportData = this.dataService.reportData as IProductData;
-    if (!reportData || reportData === undefined) return false;
+    if (!reportData) return false;
     let {
       title,
       platform,
@@ -98,9 +88,10 @@ export class ProductComponent implements OnInit {
       visitChartData,
       days,
       comPieData,
-      dealerPieData
+      dealerPieData,
+      timeRangeType
     } = reportData as IProductData;
-    title = `用户使用大数据${reportData.timeRangeType}报`;
+    title = `用户使用大数据${timeRangeType}报`;
     this.bannerInfo = {title, platform, startDate, endDate};
     this.pageTitle.setTitle(title);
     this.accountIfAdd = accountIfAddData;
@@ -131,7 +122,7 @@ export class ProductComponent implements OnInit {
       return prve + next;
     });
     let per = (sum - sumLast) / sumLast * 100;
-    let maxNum = Math.max.apply(Math, data[0].percents);
+    let maxNum = Math.max(...data[0].percents);
     let maxIndex = data[0].percents.indexOf(maxNum);
     return {
       sum,
@@ -255,7 +246,7 @@ export class ProductComponent implements OnInit {
           normal: {
             color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
               offset: 0.1,
-              color: '#5682FE'
+              color: 'rgba(86, 130, 254, .4)'
             }, {
               offset: 1,
               color: '#ffffff'
@@ -264,7 +255,7 @@ export class ProductComponent implements OnInit {
         },
       } : {});
     });
-    console.info(faultPercentByTypeOption);
+    // console.info(faultPercentByTypeOption);
     this.visitOption = faultPercentByTypeOption;
   }
 }
