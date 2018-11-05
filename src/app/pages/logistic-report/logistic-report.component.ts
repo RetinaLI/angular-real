@@ -253,7 +253,7 @@ export class LogisticReportComponent implements OnInit {
       this.endRateM = 1;
       this.addData.endRateAdd = Number(this.accSub(rate3, rate4));
     } else if ( Number(rate3) < Number(rate4) ) {
-      this.endRateM = 1;
+      this.endRateM = -1;
       this.addData.endRateAdd = Number(this.accSub(rate4, rate3));
     } else {
       this.endRateM = 0;
